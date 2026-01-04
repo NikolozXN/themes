@@ -9,44 +9,74 @@
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
     </style>
 </head>
-<body class="antialiased text-white bg-black">
+<body class="antialiased text-white dark:text-white bg-black dark:bg-black transition-colors duration-200">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-black/80 backdrop-blur-xl border-b border-white/5 z-50">
+    <nav class="fixed w-full bg-black/80 dark:bg-black/80 backdrop-blur-xl border-b border-white/5 dark:border-white/5 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
-                <a href="index.html" class="text-xl sm:text-2xl font-bold tracking-tight" style="font-family: 'Space Grotesk', sans-serif;">Alex Morgan</a>
-                <div class="hidden md:flex items-center space-x-8 lg:space-x-10">
-                    <a href="index.html" class="text-sm font-semibold text-white">Work</a>
-                    <a href="about.html" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors">About</a>
-                    <a href="services.html" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors">Services</a>
-                    <a href="contact.html" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors">Contact</a>
-                    <a href="contact.html" class="px-5 py-2.5 text-sm font-bold text-black bg-white rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl">Hire Me</a>
+                <a href="index.html" class="text-xl sm:text-2xl font-bold tracking-tight text-white dark:text-white" style="font-family: 'Space Grotesk', sans-serif;">Alex Morgan</a>
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                    <a href="index.html" class="text-sm font-semibold text-white dark:text-white">Work</a>
+                    <a href="about.html" class="text-sm font-semibold text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors">About</a>
+                    <a href="services.html" class="text-sm font-semibold text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors">Services</a>
+                    <a href="contact.html" class="text-sm font-semibold text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors">Contact</a>
+                    <button id="dark-mode-toggle" class="p-2 text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white hover:bg-white/10 dark:hover:bg-white/10 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <a href="contact.html" class="px-5 py-2.5 text-sm font-bold text-black dark:text-black bg-white dark:bg-white rounded-xl hover:bg-gray-100 dark:hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl">Hire Me</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:text-gray-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="dark-mode-toggle" class="p-2 text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300 hover:bg-white/10 dark:hover:bg-white/10 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-white dark:text-white hover:text-gray-300 dark:hover:text-gray-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-white/5">
+            <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-white/5 dark:border-white/5">
                 <div class="flex flex-col gap-3">
-                    <a href="index.html" class="text-sm font-semibold text-white py-2">Work</a>
-                    <a href="about.html" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors py-2">About</a>
-                    <a href="services.html" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors py-2">Services</a>
-                    <a href="contact.html" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors py-2">Contact</a>
-                    <a href="contact.html" class="px-5 py-2.5 text-sm font-bold text-black bg-white rounded-xl hover:bg-gray-100 transition-all text-center">Hire Me</a>
+                    <a href="index.html" class="text-sm font-semibold text-white dark:text-white py-2">Work</a>
+                    <a href="about.html" class="text-sm font-semibold text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors py-2">About</a>
+                    <a href="services.html" class="text-sm font-semibold text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors py-2">Services</a>
+                    <a href="contact.html" class="text-sm font-semibold text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition-colors py-2">Contact</a>
+                    <a href="contact.html" class="px-5 py-2.5 text-sm font-bold text-black dark:text-black bg-white dark:bg-white rounded-xl hover:bg-gray-100 dark:hover:bg-gray-100 transition-all text-center">Hire Me</a>
                 </div>
             </div>
         </div>
     </nav>
     <script>
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to dark mode (portfolio theme is dark by default)
+        const currentTheme = localStorage.getItem('portfolio-theme') || 'dark';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle?.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('portfolio-theme', theme);
         });
     </script>
 

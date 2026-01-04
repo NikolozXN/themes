@@ -11,6 +11,9 @@
         body { font-family: 'Inter', system-ui, sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Bebas Neue', cursive; }
         .font-space { font-family: 'Space Grotesk', sans-serif; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -35,10 +38,10 @@
         }
     </style>
 </head>
-<body class="bg-black text-white antialiased overflow-x-hidden">
+<body class="bg-black dark:bg-black text-white dark:text-white antialiased overflow-x-hidden transition-colors duration-200">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-black/60 backdrop-blur-2xl border-b border-white/5">
+    <nav class="fixed w-full z-50 top-0 bg-black/60 dark:bg-black/60 backdrop-blur-2xl border-b border-white/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
                 <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
@@ -47,36 +50,63 @@
                     </div>
                     <span class="text-xl sm:text-2xl md:text-3xl font-black tracking-wider" style="font-family: 'Bebas Neue', cursive;">NEXUS</span>
                 </a>
-                <div class="hidden md:flex items-center gap-6 lg:gap-8">
-                    <a href="index.html" class="text-white font-bold border-b-2 border-white pb-1 text-sm uppercase tracking-widest">Home</a>
-                    <a href="about.html" class="text-gray-400 hover:text-white transition font-semibold text-sm uppercase tracking-widest">About</a>
-                    <a href="services.html" class="text-gray-400 hover:text-white transition font-semibold text-sm uppercase tracking-widest">Schedule</a>
-                    <a href="contact.html" class="text-gray-400 hover:text-white transition font-semibold text-sm uppercase tracking-widest">Contact</a>
-                    <a href="contact.html" class="px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-full font-bold hover:shadow-lg hover:shadow-purple-500/30 transition text-xs sm:text-sm uppercase tracking-widest">
+                <div class="hidden md:flex items-center gap-4 lg:gap-6">
+                    <a href="index.html" class="text-white dark:text-white font-bold border-b-2 border-white dark:border-white pb-1 text-sm uppercase tracking-widest">Home</a>
+                    <a href="about.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition font-semibold text-sm uppercase tracking-widest">About</a>
+                    <a href="services.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition font-semibold text-sm uppercase tracking-widest">Schedule</a>
+                    <a href="contact.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition font-semibold text-sm uppercase tracking-widest">Contact</a>
+                    <button id="dark-mode-toggle" class="p-2 text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white hover:bg-white/10 dark:hover:bg-white/10 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <a href="contact.html" class="px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-500 dark:via-pink-500 dark:to-blue-500 text-white rounded-full font-bold hover:shadow-lg hover:shadow-purple-500/30 transition text-xs sm:text-sm uppercase tracking-widest">
                         Get Tickets
                     </a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="dark-mode-toggle" class="p-2 text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white hover:bg-white/10 dark:hover:bg-white/10 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-gray-400 dark:text-gray-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-2xl border-t border-white/5 pb-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 dark:bg-black/95 backdrop-blur-2xl border-t border-white/5 dark:border-white/5 pb-4">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
-                <a href="index.html" class="text-white font-bold py-2 text-sm uppercase tracking-widest">Home</a>
-                <a href="about.html" class="text-gray-400 hover:text-white transition py-2 text-sm uppercase tracking-widest">About</a>
-                <a href="services.html" class="text-gray-400 hover:text-white transition py-2 text-sm uppercase tracking-widest">Schedule</a>
-                <a href="contact.html" class="text-gray-400 hover:text-white transition py-2 text-sm uppercase tracking-widest">Contact</a>
-                <a href="contact.html" class="px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-full font-bold text-center text-sm uppercase tracking-widest">Get Tickets</a>
+                <a href="index.html" class="text-white dark:text-white font-bold py-2 text-sm uppercase tracking-widest">Home</a>
+                <a href="about.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition py-2 text-sm uppercase tracking-widest">About</a>
+                <a href="services.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition py-2 text-sm uppercase tracking-widest">Schedule</a>
+                <a href="contact.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition py-2 text-sm uppercase tracking-widest">Contact</a>
+                <a href="contact.html" class="px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-500 dark:via-pink-500 dark:to-blue-500 text-white rounded-full font-bold text-center text-sm uppercase tracking-widest">Get Tickets</a>
             </div>
         </div>
     </nav>
     <script>
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to dark mode (event theme is dark by default)
+        const currentTheme = localStorage.getItem('event-theme') || 'dark';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle?.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('event-theme', theme);
         });
     </script>
 
