@@ -87,14 +87,10 @@
             });
         });
         
-        // Mobile Menu
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
-    <script>
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         });
     </script>
 
