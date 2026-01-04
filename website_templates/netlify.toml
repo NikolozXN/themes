@@ -1,5 +1,5 @@
 [build]
   base = "website_templates"
   command = "npm run build"
-  publish = "website_templates/src"
+  publish = "src"
 
