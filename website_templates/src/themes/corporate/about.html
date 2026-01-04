@@ -9,12 +9,15 @@
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-display { font-family: 'DM Sans', system-ui, sans-serif; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
     </style>
 </head>
-<body class="antialiased text-gray-900 bg-white">
+<body class="antialiased text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 transition-colors duration-200">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-xl border-b border-gray-200 z-50">
+    <nav class="fixed w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <div class="flex items-center space-x-2 sm:space-x-3">
@@ -23,52 +26,79 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
-                    <span class="text-xl sm:text-2xl font-black tracking-tight" style="font-family: 'DM Sans', sans-serif;">CorporatePro</span>
+                    <span class="text-xl sm:text-2xl font-black tracking-tight text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">CorporatePro</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-6 lg:space-x-10">
-                    <a href="index.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">Home</a>
-                    <a href="about.html" class="text-sm font-semibold text-blue-700">About</a>
-                    <a href="services.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">Services</a>
-                    <a href="contact.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">Contact</a>
-                    <a href="#" class="px-5 lg:px-6 py-2.5 lg:py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl hover:shadow-xl hover:scale-105 transition-all">Get Started</a>
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                    <a href="index.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition">Home</a>
+                    <a href="about.html" class="text-sm font-semibold text-blue-700 dark:text-blue-400">About</a>
+                    <a href="services.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition">Services</a>
+                    <a href="contact.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition">Contact</a>
+                    <button id="dark-mode-toggle" class="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <a href="#" class="px-5 lg:px-6 py-2.5 lg:py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 dark:from-blue-600 dark:to-indigo-700 rounded-xl hover:shadow-xl hover:scale-105 transition-all">Get Started</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-gray-900">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="dark-mode-toggle" class="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-gray-200">
+            <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-gray-200 dark:border-gray-800">
                 <div class="flex flex-col gap-3">
-                    <a href="index.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">Home</a>
-                    <a href="about.html" class="text-sm font-semibold text-blue-700 py-2">About</a>
-                    <a href="services.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">Services</a>
-                    <a href="contact.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">Contact</a>
-                    <a href="#" class="px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl text-center">Get Started</a>
+                    <a href="index.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition py-2">Home</a>
+                    <a href="about.html" class="text-sm font-semibold text-blue-700 dark:text-blue-400 py-2">About</a>
+                    <a href="services.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition py-2">Services</a>
+                    <a href="contact.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition py-2">Contact</a>
+                    <a href="#" class="px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 dark:from-blue-600 dark:to-indigo-700 rounded-xl text-center">Get Started</a>
                 </div>
             </div>
         </div>
     </nav>
     <script>
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('corporate-theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle?.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('corporate-theme', theme);
+        });
     </script>
 
     <!-- Hero -->
-    <section class="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <section class="pt-24 sm:pt-32 pb-16 sm:pb-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-100 text-blue-700 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8">
+                <div class="inline-flex items-center px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8">
                     About CorporatePro
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 sm:mb-8" style="font-family: 'DM Sans', sans-serif;">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 sm:mb-8 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">
                     Building the Future of
-                    <span class="block mt-2 sm:mt-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">Enterprise Technology</span>
+                    <span class="block mt-2 sm:mt-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Enterprise Technology</span>
                 </h1>
-                <p class="text-lg sm:text-xl text-gray-600 leading-relaxed font-semibold">
+                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed font-semibold">
                     Since 2010, we've partnered with 500+ global enterprises to accelerate digital transformation, optimize operations, and unlock sustainable growth.
                 </p>
             </div>
@@ -76,18 +106,18 @@
     </section>
 
     <!-- Mission & Vision -->
-    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <section class="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center mb-16 sm:mb-20 lg:mb-24">
                 <div>
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Team collaboration" class="rounded-xl sm:rounded-2xl shadow-2xl w-full">
                 </div>
                 <div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6" style="font-family: 'DM Sans', sans-serif;">Our Mission</h2>
-                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6 font-medium">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Our Mission</h2>
+                    <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6 font-medium">
                         We empower enterprises to thrive in the digital age by delivering transformative technology solutions that drive measurable business outcomes.
                     </p>
-                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+                    <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
                         Our approach combines deep industry expertise, cutting-edge technology, and a relentless focus on client success to create lasting competitive advantages.
                     </p>
                 </div>
@@ -95,11 +125,11 @@
 
             <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
                 <div class="order-2 lg:order-1">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6" style="font-family: 'DM Sans', sans-serif;">Our Vision</h2>
-                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6 font-medium">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Our Vision</h2>
+                    <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6 font-medium">
                         To be the world's most trusted partner for enterprise digital transformation, recognized for our innovation, integrity, and impact.
                     </p>
-                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+                    <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
                         We're building a future where technology seamlessly integrates with business strategy, enabling organizations to adapt, innovate, and lead in their industries.
                     </p>
                 </div>
@@ -139,78 +169,78 @@
     </section>
 
     <!-- Values -->
-    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4" style="font-family: 'DM Sans', sans-serif;">Our Core Values</h2>
-                <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-medium px-4">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Our Core Values</h2>
+                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-medium px-4">
                     The principles that guide every decision, every project, and every relationship
                 </p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
-                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 dark:bg-blue-900/30 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3" style="font-family: 'DM Sans', sans-serif;">Innovation First</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Innovation First</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
                         We constantly push boundaries, exploring emerging technologies and methodologies to deliver cutting-edge solutions.
                     </p>
                 </div>
-                <div class="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-indigo-100 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
-                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3" style="font-family: 'DM Sans', sans-serif;">Integrity Always</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Integrity Always</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
                         Transparency, honesty, and ethical practices are non-negotiable. We build trust through consistent action.
                     </p>
                 </div>
-                <div class="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
-                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 dark:bg-purple-900/30 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3" style="font-family: 'DM Sans', sans-serif;">Client Success</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Client Success</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
                         Your success is our success. We're deeply invested in delivering outcomes that exceed expectations.
                     </p>
                 </div>
-                <div class="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
-                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 dark:bg-green-900/30 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3" style="font-family: 'DM Sans', sans-serif;">Continuous Learning</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Continuous Learning</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
                         The tech landscape evolves rapidly. We invest heavily in training and development to stay ahead.
                     </p>
                 </div>
-                <div class="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-yellow-100 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
-                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3" style="font-family: 'DM Sans', sans-serif;">Global Perspective</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Global Perspective</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
                         With teams across 15 countries, we bring diverse insights and local expertise to every engagement.
                     </p>
                 </div>
-                <div class="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-red-100 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
-                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-red-100 dark:bg-red-900/30 rounded-lg sm:rounded-xl flex items-center justify-center mb-5 sm:mb-6">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3" style="font-family: 'DM Sans', sans-serif;">Excellence Driven</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Excellence Driven</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
                         We set impossibly high standards and consistently exceed them. Good enough is never good enough.
                     </p>
                 </div>
@@ -219,11 +249,11 @@
     </section>
 
     <!-- Team -->
-    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <section class="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4" style="font-family: 'DM Sans', sans-serif;">Meet Our Leadership</h2>
-                <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-medium px-4">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Meet Our Leadership</h2>
+                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-medium px-4">
                     Industry veterans with decades of combined experience driving digital transformation
                 </p>
             </div>
@@ -232,33 +262,33 @@
                     <div class="aspect-square rounded-xl sm:rounded-2xl overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="CEO" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-1" style="font-family: 'DM Sans', sans-serif;">Michael Chen</h3>
-                    <p class="text-sm sm:text-base text-gray-600 mb-1 sm:mb-2 font-medium">CEO & Founder</p>
-                    <p class="text-xs sm:text-sm text-gray-500 font-medium">Former VP at Oracle, Stanford MBA</p>
+                    <h3 class="text-lg sm:text-xl font-black mb-1 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Michael Chen</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-1 sm:mb-2 font-medium">CEO & Founder</p>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">Former VP at Oracle, Stanford MBA</p>
                 </div>
                 <div class="text-center group">
                     <div class="aspect-square rounded-xl sm:rounded-2xl overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="CTO" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-1" style="font-family: 'DM Sans', sans-serif;">Sarah Johnson</h3>
-                    <p class="text-sm sm:text-base text-gray-600 mb-1 sm:mb-2 font-medium">Chief Technology Officer</p>
-                    <p class="text-xs sm:text-sm text-gray-500 font-medium">Ex-Google Engineer, MIT PhD</p>
+                    <h3 class="text-lg sm:text-xl font-black mb-1 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Sarah Johnson</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-1 sm:mb-2 font-medium">Chief Technology Officer</p>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">Ex-Google Engineer, MIT PhD</p>
                 </div>
                 <div class="text-center group">
                     <div class="aspect-square rounded-xl sm:rounded-2xl overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80" alt="COO" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-1" style="font-family: 'DM Sans', sans-serif;">David Martinez</h3>
-                    <p class="text-sm sm:text-base text-gray-600 mb-1 sm:mb-2 font-medium">Chief Operating Officer</p>
-                    <p class="text-xs sm:text-sm text-gray-500 font-medium">20+ years in Enterprise Operations</p>
+                    <h3 class="text-lg sm:text-xl font-black mb-1 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">David Martinez</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-1 sm:mb-2 font-medium">Chief Operating Officer</p>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">20+ years in Enterprise Operations</p>
                 </div>
                 <div class="text-center group">
                     <div class="aspect-square rounded-xl sm:rounded-2xl overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="CMO" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-1" style="font-family: 'DM Sans', sans-serif;">Emily Roberts</h3>
-                    <p class="text-sm sm:text-base text-gray-600 mb-1 sm:mb-2 font-medium">Chief Marketing Officer</p>
-                    <p class="text-xs sm:text-sm text-gray-500 font-medium">Former McKinsey Partner, Harvard MBA</p>
+                    <h3 class="text-lg sm:text-xl font-black mb-1 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Emily Roberts</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-1 sm:mb-2 font-medium">Chief Marketing Officer</p>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">Former McKinsey Partner, Harvard MBA</p>
                 </div>
             </div>
         </div>
@@ -288,7 +318,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 pt-12 sm:pt-16 pb-8">
+    <footer class="bg-gray-900 dark:bg-black text-gray-400 dark:text-gray-500 pt-12 sm:pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
                 <div class="sm:col-span-2 lg:col-span-1">

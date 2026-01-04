@@ -93,60 +93,70 @@
                         <option>User</option>
                     </select>
                 </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left">
-                        <thead class="bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                            <tr>
-                                <th class="px-4 sm:px-6 py-4">Name</th>
-                                <th class="px-4 sm:px-6 py-4">Role</th>
-                                <th class="px-4 sm:px-6 py-4">Status</th>
-                                <th class="px-4 sm:px-6 py-4 hidden sm:table-cell">Last Login</th>
-                                <th class="px-4 sm:px-6 py-4">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700 text-sm">
-                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                                <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Alice Freeman" class="w-8 h-8 rounded-full object-cover">
-                                    <div class="font-bold text-gray-900 dark:text-gray-100">Alice Freeman</div>
-                                </td>
-                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400">Editor</td>
-                                <td class="px-4 sm:px-6 py-4"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
-                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">2 hours ago</td>
-                                <td class="px-4 sm:px-6 py-4 text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
-                            </tr>
-                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                                <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Bob Smith" class="w-8 h-8 rounded-full object-cover">
-                                    <div class="font-bold text-gray-900 dark:text-gray-100">Bob Smith</div>
-                                </td>
-                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400">User</td>
-                                <td class="px-4 sm:px-6 py-4"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full text-xs font-bold">Offline</span></td>
-                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">Yesterday</td>
-                                <td class="px-4 sm:px-6 py-4 text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
-                            </tr>
-                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                                <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Charlie Day" class="w-8 h-8 rounded-full object-cover">
-                                    <div class="font-bold text-gray-900 dark:text-gray-100">Charlie Day</div>
-                                </td>
-                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400">Admin</td>
-                                <td class="px-4 sm:px-6 py-4"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
-                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">Just now</td>
-                                <td class="px-4 sm:px-6 py-4 text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
-                            </tr>
-                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                                <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
-                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Diana Miller" class="w-8 h-8 rounded-full object-cover">
-                                    <div class="font-bold text-gray-900 dark:text-gray-100">Diana Miller</div>
-                                </td>
-                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400">Editor</td>
-                                <td class="px-4 sm:px-6 py-4"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
-                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">5 hours ago</td>
-                                <td class="px-4 sm:px-6 py-4 text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="overflow-x-auto -mx-4 sm:-mx-6">
+                    <div class="inline-block min-w-full align-middle">
+                        <table class="min-w-full text-left">
+                            <thead class="bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                                <tr>
+                                    <th class="px-4 sm:px-6 py-4 whitespace-nowrap">Name</th>
+                                    <th class="px-4 sm:px-6 py-4 whitespace-nowrap">Role</th>
+                                    <th class="px-4 sm:px-6 py-4 whitespace-nowrap">Status</th>
+                                    <th class="px-4 sm:px-6 py-4 whitespace-nowrap hidden sm:table-cell">Last Login</th>
+                                    <th class="px-4 sm:px-6 py-4 whitespace-nowrap">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 dark:divide-gray-700 text-sm bg-white dark:bg-gray-800">
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Alice Freeman" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                                            <div class="font-bold text-gray-900 dark:text-gray-100">Alice Freeman</div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400">Editor</td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400 hidden sm:table-cell">2 hours ago</td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Bob Smith" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                                            <div class="font-bold text-gray-900 dark:text-gray-100">Bob Smith</div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400">User</td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full text-xs font-bold">Offline</span></td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400 hidden sm:table-cell">Yesterday</td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Charlie Day" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                                            <div class="font-bold text-gray-900 dark:text-gray-100">Charlie Day</div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400">Admin</td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400 hidden sm:table-cell">Just now</td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Diana Miller" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                                            <div class="font-bold text-gray-900 dark:text-gray-100">Diana Miller</div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400">Editor</td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-400 hidden sm:table-cell">5 hours ago</td>
+                                    <td class="px-4 sm:px-6 py-4 whitespace-nowrap text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                     <span>Showing 1-4 of 50 users</span>

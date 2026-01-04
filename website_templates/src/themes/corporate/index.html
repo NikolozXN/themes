@@ -9,12 +9,15 @@
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-display { font-family: 'DM Sans', system-ui, sans-serif; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
     </style>
 </head>
-<body class="antialiased text-gray-900 bg-white">
+<body class="antialiased text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 transition-colors duration-200">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-xl border-b border-gray-200 z-50">
+    <nav class="fixed w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <div class="flex items-center space-x-2 sm:space-x-3">
@@ -25,40 +28,67 @@
                     </div>
                     <span class="text-xl sm:text-2xl font-black tracking-tight" style="font-family: 'DM Sans', sans-serif;">CorporatePro</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-6 lg:space-x-10">
-                    <a href="index.html" class="text-sm font-bold text-blue-700">Home</a>
-                    <a href="about.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">About</a>
-                    <a href="services.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">Services</a>
-                    <a href="contact.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">Contact</a>
-                    <a href="#" class="px-5 lg:px-6 py-2.5 lg:py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl hover:shadow-xl hover:scale-105 transition-all">Get Started</a>
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                    <a href="index.html" class="text-sm font-bold text-blue-700 dark:text-blue-400">Home</a>
+                    <a href="about.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition">About</a>
+                    <a href="services.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition">Services</a>
+                    <a href="contact.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition">Contact</a>
+                    <button id="dark-mode-toggle" class="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <a href="#" class="px-5 lg:px-6 py-2.5 lg:py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 dark:from-blue-600 dark:to-indigo-700 rounded-xl hover:shadow-xl hover:scale-105 transition-all">Get Started</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-gray-900">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="dark-mode-toggle" class="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-gray-200">
+            <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-gray-200 dark:border-gray-800">
                 <div class="flex flex-col gap-3">
-                    <a href="index.html" class="text-sm font-bold text-blue-700 py-2">Home</a>
-                    <a href="about.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">About</a>
-                    <a href="services.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">Services</a>
-                    <a href="contact.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">Contact</a>
-                    <a href="#" class="px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl text-center">Get Started</a>
+                    <a href="index.html" class="text-sm font-bold text-blue-700 dark:text-blue-400 py-2">Home</a>
+                    <a href="about.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition py-2">About</a>
+                    <a href="services.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition py-2">Services</a>
+                    <a href="contact.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-400 transition py-2">Contact</a>
+                    <a href="#" class="px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 dark:from-blue-600 dark:to-indigo-700 rounded-xl text-center">Get Started</a>
                 </div>
             </div>
         </div>
     </nav>
     <script>
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('corporate-theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle?.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('corporate-theme', theme);
+        });
     </script>
 
     <!-- Modern Hero Section -->
-    <section class="relative pt-24 sm:pt-32 pb-16 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <section class="relative pt-24 sm:pt-32 pb-16 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div class="absolute inset-0">
             <div class="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-indigo-200/30 rounded-full blur-3xl"></div>
@@ -66,17 +96,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 <div>
-                    <div class="inline-flex flex-wrap items-center px-4 sm:px-5 py-2 sm:py-2.5 bg-white/80 backdrop-blur-sm border border-blue-200 text-blue-800 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-sm">
+                    <div class="inline-flex flex-wrap items-center px-4 sm:px-5 py-2 sm:py-2.5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200 dark:border-blue-700 text-blue-800 dark:text-blue-300 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-sm">
                         <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                         </svg>
                         <span class="whitespace-nowrap">Trusted by Fortune 500</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 sm:mb-8" style="font-family: 'DM Sans', sans-serif;">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 sm:mb-8 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">
                         Transform Your Business with
-                        <span class="block mt-2 sm:mt-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800">Enterprise Solutions</span>
+                        <span class="block mt-2 sm:mt-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 dark:from-blue-400 dark:via-indigo-400 dark:to-blue-500">Enterprise Solutions</span>
                     </h1>
-                    <p class="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 sm:mb-10 leading-relaxed font-semibold max-w-xl">
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 sm:mb-10 leading-relaxed font-semibold max-w-xl">
                         Drive growth, optimize operations, and scale with confidence. Our proven strategies and cutting-edge technology deliver measurable results.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
@@ -86,24 +116,24 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </a>
-                        <a href="#" class="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-sm sm:text-base font-bold text-gray-800 bg-white border-2 border-gray-300 rounded-xl sm:rounded-2xl hover:border-blue-600 hover:text-blue-700 transition-all shadow-lg">
+                        <a href="#" class="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-sm sm:text-base font-bold text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-xl sm:rounded-2xl hover:border-blue-600 dark:hover:border-blue-500 hover:text-blue-700 dark:hover:text-blue-400 transition-all shadow-lg">
                             View Case Studies
                         </a>
                     </div>
                     <div class="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-10">
                         <div>
-                            <div class="text-3xl sm:text-4xl font-black text-gray-900 mb-1" style="font-family: 'DM Sans', sans-serif;">500+</div>
-                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Global Clients</div>
+                            <div class="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white mb-1" style="font-family: 'DM Sans', sans-serif;">500+</div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-semibold uppercase tracking-wide">Global Clients</div>
                         </div>
-                        <div class="hidden sm:block w-px h-12 sm:h-14 bg-gray-300"></div>
+                        <div class="hidden sm:block w-px h-12 sm:h-14 bg-gray-300 dark:bg-gray-700"></div>
                         <div>
-                            <div class="text-3xl sm:text-4xl font-black text-gray-900 mb-1" style="font-family: 'DM Sans', sans-serif;">98%</div>
-                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Satisfaction Rate</div>
+                            <div class="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white mb-1" style="font-family: 'DM Sans', sans-serif;">98%</div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-semibold uppercase tracking-wide">Satisfaction Rate</div>
                         </div>
-                        <div class="hidden sm:block w-px h-12 sm:h-14 bg-gray-300"></div>
+                        <div class="hidden sm:block w-px h-12 sm:h-14 bg-gray-300 dark:bg-gray-700"></div>
                         <div>
-                            <div class="text-3xl sm:text-4xl font-black text-gray-900 mb-1" style="font-family: 'DM Sans', sans-serif;">$2.4B</div>
-                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Revenue Impact</div>
+                            <div class="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white mb-1" style="font-family: 'DM Sans', sans-serif;">$2.4B</div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-semibold uppercase tracking-wide">Revenue Impact</div>
                         </div>
                     </div>
                 </div>
@@ -111,16 +141,16 @@
                     <div class="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80" alt="Corporate team" class="w-full h-full object-cover">
                     </div>
-                    <div class="absolute -bottom-4 sm:-bottom-8 -left-4 sm:-left-8 bg-white rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 max-w-xs border border-gray-100">
+                    <div class="absolute -bottom-4 sm:-bottom-8 -left-4 sm:-left-8 bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 max-w-xs border border-gray-100 dark:border-gray-700">
                         <div class="flex items-center gap-3 sm:gap-4">
-                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 dark:bg-green-900/30 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-green-700 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <div>
-                                <div class="text-xs sm:text-sm text-gray-600 font-semibold mb-1">Average ROI</div>
-                                <div class="text-2xl sm:text-3xl font-black text-gray-900" style="font-family: 'DM Sans', sans-serif;">340%</div>
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-semibold mb-1">Average ROI</div>
+                                <div class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">340%</div>
                             </div>
                         </div>
                     </div>
@@ -130,42 +160,42 @@
     </section>
 
     <!-- Trust Bar -->
-    <section class="py-12 sm:py-16 bg-white border-y border-gray-200">
+    <section class="py-12 sm:py-16 bg-white dark:bg-gray-800 border-y border-gray-200 dark:border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8 sm:mb-10">
-                <p class="text-xs sm:text-sm font-black text-gray-500 uppercase tracking-widest">Trusted by Industry Leaders</p>
+                <p class="text-xs sm:text-sm font-black text-gray-500 dark:text-gray-400 uppercase tracking-widest">Trusted by Industry Leaders</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 items-center opacity-60">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 items-center opacity-60 dark:opacity-70">
                 <div class="flex items-center justify-center">
-                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400" style="font-family: 'DM Sans', sans-serif;">MICROSOFT</div>
+                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500" style="font-family: 'DM Sans', sans-serif;">MICROSOFT</div>
                 </div>
                 <div class="flex items-center justify-center">
-                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400" style="font-family: 'DM Sans', sans-serif;">AMAZON</div>
+                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500" style="font-family: 'DM Sans', sans-serif;">AMAZON</div>
                 </div>
                 <div class="flex items-center justify-center">
-                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400" style="font-family: 'DM Sans', sans-serif;">SALESFORCE</div>
+                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500" style="font-family: 'DM Sans', sans-serif;">SALESFORCE</div>
                 </div>
                 <div class="flex items-center justify-center">
-                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400" style="font-family: 'DM Sans', sans-serif;">IBM</div>
+                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400 dark:text-gray-500" style="font-family: 'DM Sans', sans-serif;">IBM</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Overview -->
-    <section class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50">
+    <section class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16 lg:mb-20">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 sm:mb-6" style="font-family: 'DM Sans', sans-serif;">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 sm:mb-6 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">
                     Comprehensive Enterprise Solutions
                 </h2>
-                <p class="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-semibold px-4">
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-semibold px-4">
                     End-to-end services designed to accelerate your digital transformation and drive sustainable growth
                 </p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Service 1 -->
-                <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group">
                     <div class="relative h-32 sm:h-36 bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80" alt="Business Analytics" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
@@ -178,11 +208,11 @@
                         </div>
                     </div>
                     <div class="p-5 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Business Analytics</h3>
-                        <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                        <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Business Analytics</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed font-semibold">
                             Transform raw data into actionable insights with our advanced analytics platform. Make data-driven decisions faster.
                         </p>
-                        <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900 transition-colors">
+                        <a href="#" class="inline-flex items-center text-sm text-blue-700 dark:text-blue-400 font-bold hover:text-blue-900 dark:hover:text-blue-300 transition-colors">
                             Learn more
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -192,17 +222,17 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-                    <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-indigo-600 group-hover:to-purple-700 transition-all">
-                        <svg class="w-6 h-6 text-indigo-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group">
+                    <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-indigo-600 group-hover:to-purple-700 transition-all">
+                        <svg class="w-6 h-6 text-indigo-700 dark:text-indigo-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Process Automation</h3>
-                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Process Automation</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed font-semibold">
                         Streamline operations and reduce costs by up to 60% with intelligent automation solutions tailored to your workflow.
                     </p>
-                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 dark:text-blue-400 font-bold hover:text-blue-900 dark:hover:text-blue-300">
                         Learn more
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -211,17 +241,17 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-purple-600 group-hover:to-pink-700 transition-all">
-                        <svg class="w-6 h-6 text-purple-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-purple-600 group-hover:to-pink-700 transition-all">
+                        <svg class="w-6 h-6 text-purple-700 dark:text-purple-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Cloud Infrastructure</h3>
-                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Cloud Infrastructure</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed font-semibold">
                         Scale effortlessly with enterprise-grade cloud solutions. 99.99% uptime SLA with global redundancy.
                     </p>
-                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 dark:text-blue-400 font-bold hover:text-blue-900 dark:hover:text-blue-300">
                         Learn more
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -230,17 +260,17 @@
                 </div>
 
                 <!-- Service 4 -->
-                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-green-600 group-hover:to-emerald-700 transition-all">
-                        <svg class="w-6 h-6 text-green-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-green-600 group-hover:to-emerald-700 transition-all">
+                        <svg class="w-6 h-6 text-green-700 dark:text-green-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Cybersecurity</h3>
-                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Cybersecurity</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed font-semibold">
                         Protect your assets with military-grade security. 24/7 threat monitoring and instant incident response.
                     </p>
-                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 dark:text-blue-400 font-bold hover:text-blue-900 dark:hover:text-blue-300">
                         Learn more
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -249,17 +279,17 @@
                 </div>
 
                 <!-- Service 5 -->
-                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-                    <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-yellow-600 group-hover:to-orange-700 transition-all">
-                        <svg class="w-6 h-6 text-yellow-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group">
+                    <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-yellow-600 group-hover:to-orange-700 transition-all">
+                        <svg class="w-6 h-6 text-yellow-700 dark:text-yellow-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Consulting Services</h3>
-                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Consulting Services</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed font-semibold">
                         Strategic guidance from industry experts. Navigate complex challenges and unlock new opportunities.
                     </p>
-                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 dark:text-blue-400 font-bold hover:text-blue-900 dark:hover:text-blue-300">
                         Learn more
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -268,17 +298,17 @@
                 </div>
 
                 <!-- Service 6 -->
-                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-red-600 group-hover:to-rose-700 transition-all">
-                        <svg class="w-6 h-6 text-red-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-red-600 group-hover:to-rose-700 transition-all">
+                        <svg class="w-6 h-6 text-red-700 dark:text-red-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Performance Optimization</h3>
-                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                    <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">Performance Optimization</h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3 leading-relaxed font-semibold">
                         Maximize efficiency and reduce bottlenecks. Our optimization framework delivers 10x faster results.
                     </p>
-                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 dark:text-blue-400 font-bold hover:text-blue-900 dark:hover:text-blue-300">
                         Learn more
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -290,51 +320,51 @@
     </section>
 
     <!-- Case Study Feature -->
-    <section class="py-16 sm:py-24 lg:py-32 bg-white">
+    <section class="py-16 sm:py-24 lg:py-32 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
                 <div>
-                    <div class="inline-block px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8">
+                    <div class="inline-block px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8">
                         Case Study
                     </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 sm:mb-8" style="font-family: 'DM Sans', sans-serif;">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 sm:mb-8 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">
                         How We Helped TechCorp Increase Revenue by 340%
                     </h2>
-                    <p class="text-lg sm:text-xl text-gray-700 mb-8 sm:mb-10 leading-relaxed font-semibold">
+                    <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8 sm:mb-10 leading-relaxed font-semibold">
                         TechCorp needed to modernize their legacy systems and scale operations globally. Our comprehensive digital transformation strategy delivered exceptional results in just 18 months.
                     </p>
                     <div class="space-y-4 sm:space-y-6 mb-10 sm:mb-12">
                         <div class="flex items-start gap-4 sm:gap-5">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 dark:bg-green-900/30 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2" style="font-family: 'DM Sans', sans-serif;">340% Revenue Growth</h4>
-                                <p class="text-sm sm:text-base text-gray-700 font-semibold">Expanded to 12 new markets with automated operations</p>
+                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">340% Revenue Growth</h4>
+                                <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-semibold">Expanded to 12 new markets with automated operations</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 sm:gap-5">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 dark:bg-green-900/30 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2" style="font-family: 'DM Sans', sans-serif;">60% Cost Reduction</h4>
-                                <p class="text-sm sm:text-base text-gray-700 font-semibold">Streamlined processes saved $4.2M annually</p>
+                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">60% Cost Reduction</h4>
+                                <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-semibold">Streamlined processes saved $4.2M annually</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 sm:gap-5">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 dark:bg-green-900/30 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2" style="font-family: 'DM Sans', sans-serif;">10x Faster Deployment</h4>
-                                <p class="text-sm sm:text-base text-gray-700 font-semibold">From weeks to hours with CI/CD automation</p>
+                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2 text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">10x Faster Deployment</h4>
+                                <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-semibold">From weeks to hours with CI/CD automation</p>
                             </div>
                         </div>
                     </div>
@@ -347,12 +377,12 @@
                 </div>
                 <div class="relative mt-8 lg:mt-0">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Analytics dashboard" class="rounded-2xl sm:rounded-3xl shadow-2xl w-full">
-                    <div class="absolute -bottom-4 sm:-bottom-10 -left-4 sm:-left-10 bg-white rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-gray-100 max-w-[200px] sm:max-w-xs">
+                    <div class="absolute -bottom-4 sm:-bottom-10 -left-4 sm:-left-10 bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-gray-100 dark:border-gray-700 max-w-[200px] sm:max-w-xs">
                         <div class="flex items-center gap-3 sm:gap-4">
                             <div class="text-4xl sm:text-6xl">📈</div>
                             <div>
-                                <div class="text-xs sm:text-sm text-gray-600 font-semibold mb-1">Total Impact</div>
-                                <div class="text-2xl sm:text-3xl font-black text-gray-900" style="font-family: 'DM Sans', sans-serif;">$12.4M</div>
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-semibold mb-1">Total Impact</div>
+                                <div class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white" style="font-family: 'DM Sans', sans-serif;">$12.4M</div>
                             </div>
                         </div>
                     </div>
@@ -386,7 +416,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10">
+    <footer class="bg-gray-900 dark:bg-black text-gray-400 dark:text-gray-500 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
                 <div class="sm:col-span-2 lg:col-span-1">

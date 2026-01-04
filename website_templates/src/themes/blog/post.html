@@ -12,26 +12,50 @@
         .article-content p { margin-bottom: 1.5rem; }
         .article-content h2 { margin-top: 3rem; margin-bottom: 1.5rem; }
         .article-content h3 { margin-top: 2rem; margin-bottom: 1rem; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
     </style>
 </head>
-<body class="bg-white text-gray-900 antialiased">
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
     
     <!-- Header -->
-    <header class="border-b border-gray-100 sticky top-0 bg-white/95 backdrop-blur-xl z-50 shadow-sm">
+    <header class="border-b border-gray-100 dark:border-gray-800 sticky top-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row items-center justify-between h-auto sm:h-20 py-4 sm:py-0">
-                <a href="index.html" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-0 hover:text-gray-600 transition" style="font-family: 'Crimson Pro', serif;">
+                <a href="index.html" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-0 text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition" style="font-family: 'Crimson Pro', serif;">
                     The Daily Journal
                 </a>
-                <nav class="flex flex-wrap gap-4 sm:gap-6 lg:gap-8 text-sm font-semibold">
-                    <a href="index.html" class="text-gray-600 hover:text-gray-900 transition">Read</a>
-                    <a href="about.html" class="text-gray-600 hover:text-gray-900 transition">About</a>
-                    <a href="services.html" class="text-gray-600 hover:text-gray-900 transition">Topics</a>
-                    <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition">Contact</a>
+                <nav class="flex flex-wrap items-center gap-3 sm:gap-4 lg:gap-6 text-sm font-semibold">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Read</a>
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">About</a>
+                    <a href="services.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Topics</a>
+                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Contact</a>
+                    <button id="dark-mode-toggle" class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
                 </nav>
             </div>
         </div>
     </header>
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('blog-theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle?.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('blog-theme', theme);
+        });
+    </script>
 
     <!-- Article Header -->
     <article class="py-12 sm:py-16 md:py-20">

@@ -10,46 +10,76 @@
         body { font-family: 'Inter', system-ui, sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Montserrat', sans-serif; }
         .font-bebas { font-family: 'Bebas Neue', cursive; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
     </style>
 </head>
-<body class="bg-gray-950 text-white antialiased">
+<body class="bg-gray-950 dark:bg-gray-950 text-white dark:text-white antialiased transition-colors duration-200">
     
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-gray-950/95 backdrop-blur-xl border-b border-gray-800">
+    <nav class="fixed w-full z-50 top-0 bg-gray-950/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-800 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
                 <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">
                     <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">CREATIVE</span>
-                    <span class="text-white">.</span>
+                    <span class="text-white dark:text-white">.</span>
                 </a>
-                <div class="hidden md:flex items-center gap-6 lg:gap-8">
-                    <a href="index.html" class="text-gray-400 hover:text-white transition font-medium">Home</a>
-                    <a href="about.html" class="text-white font-semibold border-b-2 border-pink-500 pb-1">About</a>
-                    <a href="services.html" class="text-gray-400 hover:text-white transition font-medium">Services</a>
-                    <a href="contact.html" class="px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition text-sm sm:text-base">
+                <div class="hidden md:flex items-center gap-4 lg:gap-6">
+                    <a href="index.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition font-medium">Home</a>
+                    <a href="about.html" class="text-white dark:text-white font-semibold border-b-2 border-pink-500 dark:border-pink-500 pb-1">About</a>
+                    <a href="services.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition font-medium">Services</a>
+                    <button id="dark-mode-toggle" class="p-2 text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white hover:bg-gray-800 dark:hover:bg-gray-800 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <a href="contact.html" class="px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-pink-500 to-purple-600 dark:from-pink-500 dark:to-purple-600 rounded-full font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition text-sm sm:text-base">
                         Contact
                     </a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="dark-mode-toggle" class="p-2 text-white dark:text-white hover:bg-gray-800 dark:hover:bg-gray-800 rounded-lg transition">
+                        <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-white dark:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-950 border-t border-gray-800 pb-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-950 dark:bg-gray-950 border-t border-gray-800 dark:border-gray-800 pb-4">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
-                <a href="index.html" class="text-gray-400 hover:text-white transition py-2">Home</a>
-                <a href="about.html" class="text-white font-semibold py-2">About</a>
-                <a href="services.html" class="text-gray-400 hover:text-white transition py-2">Services</a>
-                <a href="contact.html" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full font-semibold text-center">Contact</a>
+                <a href="index.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition py-2">Home</a>
+                <a href="about.html" class="text-white dark:text-white font-semibold py-2">About</a>
+                <a href="services.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition py-2">Services</a>
+                <a href="contact.html" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 dark:from-pink-500 dark:to-purple-600 rounded-full font-semibold text-center">Contact</a>
             </div>
         </div>
     </nav>
     <script>
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to dark mode (agency theme is dark by default)
+        const currentTheme = localStorage.getItem('agency-theme') || 'dark';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle?.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('agency-theme', theme);
         });
     </script>
 
