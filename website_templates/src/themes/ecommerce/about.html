@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ShopCentral</title>
+    <link rel="stylesheet" href="../../../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Outfit', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    
+    <!-- Announcement Bar -->
+    <div class="bg-black text-white text-center text-xs sm:text-sm py-3 font-semibold">
+        <div class="max-w-7xl mx-auto px-4">
+            Free shipping on orders over $100 • New arrivals every week • 30-day return policy
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="border-b border-gray-100 sticky top-0 bg-white/98 backdrop-blur-xl z-30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                <a href="index.html" class="text-2xl sm:text-3xl font-black tracking-tight" style="font-family: 'Outfit', sans-serif;">
+                    SHOP<span class="text-orange-600">CENTRAL</span>
+                </a>
+                <div class="flex items-center gap-4 sm:gap-6 lg:gap-8">
+                    <div class="hidden md:flex gap-6 lg:gap-8 text-sm font-semibold">
+                        <a href="index.html" class="text-gray-600 hover:text-orange-600 transition">Shop</a>
+                        <a href="services.html" class="text-gray-600 hover:text-orange-600 transition">Collections</a>
+                        <a href="about.html" class="text-orange-600 border-b-2 border-orange-600 pb-1">About</a>
+                        <a href="contact.html" class="text-gray-600 hover:text-orange-600 transition">Contact</a>
+                    </div>
+                    <div class="flex items-center gap-4 sm:gap-5 text-gray-600">
+                        <button class="hover:text-orange-600 transition relative">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        </button>
+                        <button class="hover:text-orange-600 transition relative">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </button>
+                    </div>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4 pt-2 border-t border-gray-200">
+                <div class="flex flex-col gap-3">
+                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-orange-600 transition py-2">Shop</a>
+                    <a href="services.html" class="text-sm font-medium text-gray-600 hover:text-orange-600 transition py-2">Collections</a>
+                    <a href="about.html" class="text-sm font-semibold text-orange-600 py-2">About</a>
+                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-orange-600 transition py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero -->
+    <section class="relative min-h-[60vh] sm:min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80" alt="About" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 sm:mb-8 text-white leading-[1.05] tracking-tight" style="font-family: 'Outfit', sans-serif;">
+                    Our Story
+                </h1>
+                <p class="text-xl sm:text-2xl md:text-3xl text-white/90 max-w-2xl leading-relaxed font-medium">
+                    Founded in 2020, ShopCentral began with a simple idea: high-quality fashion shouldn't cost the earth.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-16 sm:py-20 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center mb-20 sm:mb-24">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="Store" class="rounded-2xl shadow-2xl w-full">
+                </div>
+                <div>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 sm:mb-8 text-gray-900" style="font-family: 'Outfit', sans-serif;">Who We Are</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6 font-medium">
+                        We source directly from manufacturers to bring you the best prices without compromising on style. Our mission is to make premium fashion accessible to everyone.
+                    </p>
+                    <p class="text-lg sm:text-xl text-gray-600 leading-relaxed font-medium">
+                        With over 50,000 happy customers worldwide, we've built a reputation for quality, style, and exceptional customer service.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 sm:mb-8 text-gray-900" style="font-family: 'Outfit', sans-serif;">Our Values</h2>
+                    <div class="space-y-6 sm:space-y-8">
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-gray-900" style="font-family: 'Outfit', sans-serif;">Sustainability</h3>
+                            <p class="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+                                We are committed to reducing our environmental footprint. All our packaging is 100% recyclable, and we work exclusively with ethical factories that share our values.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-gray-900" style="font-family: 'Outfit', sans-serif;">Quality</h3>
+                            <p class="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+                                Every product is inspected by hand before shipping. We offer a 30-day money-back guarantee because we believe in our products and stand behind every purchase.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-gray-900" style="font-family: 'Outfit', sans-serif;">Customer First</h3>
+                            <p class="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+                                Your satisfaction is our priority. Our dedicated support team is available 24/7 to help with any questions or concerns.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Team" class="rounded-2xl shadow-2xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 sm:py-20 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-4 text-gray-900" style="font-family: 'Outfit', sans-serif;">By The Numbers</h2>
+                <p class="text-xl sm:text-2xl text-gray-600 font-medium">Our impact in numbers</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+                <div class="text-center">
+                    <div class="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-3" style="font-family: 'Outfit', sans-serif;">50K+</div>
+                    <div class="text-lg sm:text-xl text-gray-600 font-medium">Happy Customers</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-3" style="font-family: 'Outfit', sans-serif;">10K+</div>
+                    <div class="text-lg sm:text-xl text-gray-600 font-medium">Products</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-3" style="font-family: 'Outfit', sans-serif;">150+</div>
+                    <div class="text-lg sm:text-xl text-gray-600 font-medium">Countries</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-3" style="font-family: 'Outfit', sans-serif;">98%</div>
+                    <div class="text-lg sm:text-xl text-gray-600 font-medium">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 md:py-24 bg-black text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6" style="font-family: 'Outfit', sans-serif;">Join Our Journey</h2>
+            <p class="text-xl sm:text-2xl text-gray-400 mb-10 max-w-2xl mx-auto font-medium">Be part of our growing community of style enthusiasts</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html" class="inline-flex items-center justify-center px-10 py-5 bg-white text-gray-900 rounded-xl font-bold text-lg hover:bg-gray-100 transition">
+                    Shop Now
+                </a>
+                <a href="contact.html" class="inline-flex items-center justify-center px-10 py-5 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white rounded-xl font-bold text-lg hover:bg-white/20 transition">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <a href="#" class="text-2xl sm:text-3xl font-black tracking-tight mb-4 sm:mb-6 block" style="font-family: 'Outfit', sans-serif;">
+                        SHOP<span class="text-orange-600">CENTRAL</span>
+                    </a>
+                    <p class="text-sm text-gray-400 max-w-sm mb-6 leading-relaxed font-medium">Premium fashion and lifestyle products. Quality guaranteed.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-wider" style="font-family: 'Outfit', sans-serif;">Shop</h4>
+                    <ul class="space-y-4 text-sm text-gray-400 font-medium">
+                        <li><a href="index.html" class="hover:text-white transition">New Arrivals</a></li>
+                        <li><a href="index.html" class="hover:text-white transition">Best Sellers</a></li>
+                        <li><a href="index.html" class="hover:text-white transition">Sale</a></li>
+                        <li><a href="#" class="hover:text-white transition">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-wider" style="font-family: 'Outfit', sans-serif;">Help</h4>
+                    <ul class="space-y-4 text-sm text-gray-400 font-medium">
+                        <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Shipping</a></li>
+                        <li><a href="#" class="hover:text-white transition">Returns</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-wider" style="font-family: 'Outfit', sans-serif;">Company</h4>
+                    <ul class="space-y-4 text-sm text-gray-400 font-medium">
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500 font-medium">
+                <p>&copy; 2024 ShopCentral. All rights reserved.</p>
+                <div class="flex flex-wrap gap-6 justify-center">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="../../index.html" class="hover:text-white transition">Back to Themes</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Journal - Thoughtful Writing & Stories</title>
+    <meta name="description" content="A curated collection of stories about lifestyle, travel, design, and mindful living. Clean typography and thoughtful content.">
+    <link rel="stylesheet" href="../../../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Crimson Pro', serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    
+    <!-- Header -->
+    <header class="border-b border-gray-100 sticky top-0 bg-white/95 backdrop-blur-xl z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between h-auto sm:h-20 py-4 sm:py-0">
+                <a href="index.html" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-0 hover:text-gray-600 transition" style="font-family: 'Crimson Pro', serif;">
+                    The Daily Journal
+                </a>
+                <nav class="flex flex-wrap gap-4 sm:gap-6 lg:gap-8 text-sm font-semibold">
+                    <a href="index.html" class="text-gray-900 border-b-2 border-gray-900 pb-1">Read</a>
+                    <a href="about.html" class="text-gray-600 hover:text-gray-900 transition">About</a>
+                    <a href="services.html" class="text-gray-600 hover:text-gray-900 transition">Topics</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition">Contact</a>
+                    <button id="mobile-menu-btn" class="sm:hidden p-2 text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden sm:hidden pb-4 pt-2 border-t border-gray-200">
+                <div class="flex flex-col gap-3">
+                    <a href="index.html" class="text-sm font-semibold text-gray-900 py-2">Read</a>
+                    <a href="about.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition py-2">About</a>
+                    <a href="services.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition py-2">Topics</a>
+                    <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Featured Post -->
+    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <article class="max-w-5xl mx-auto">
+                <div class="aspect-[16/9] sm:aspect-[2/1] bg-gray-200 mb-8 sm:mb-10 md:mb-12 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
+                    <a href="post.html">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68e2c6f44d?auto=format&fit=crop&w=1200&q=80" alt="Slow Living" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="eager">
+                    </a>
+                </div>
+                <div class="text-center max-w-3xl mx-auto px-4">
+                    <span class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
+                        Lifestyle
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight" style="font-family: 'Crimson Pro', serif;">
+                        <a href="post.html" class="hover:text-gray-600 transition">The Art of Slow Living in a Fast-Paced World</a>
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 leading-relaxed font-medium">
+                        Discover how to find balance and peace in your everyday life through mindful practices and intentional living. A guide to creating space for what truly matters.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 mb-6 sm:mb-8 font-medium">
+                        <div class="flex items-center gap-2">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Author" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover" loading="lazy">
+                            <span>Elena Martinez</span>
+                        </div>
+                        <span>•</span>
+                        <time datetime="2024-12-15">December 15, 2024</time>
+                        <span>•</span>
+                        <span>8 min read</span>
+                    </div>
+                    <a href="post.html" class="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white rounded-xl font-semibold text-sm sm:text-base hover:bg-gray-800 transition shadow-lg">
+                        Read Article
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Posts Grid -->
+    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4" style="font-family: 'Crimson Pro', serif;">Latest Stories</h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 font-medium">Thoughtful writing on lifestyle, travel, and design</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16">
+                <!-- Post Card 1 -->
+                <article class="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100">
+                    <a href="post.html">
+                        <div class="aspect-[4/3] bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Kyoto" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
+                        </div>
+                    </a>
+                    <div class="p-5 sm:p-6 md:p-8">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold mb-3 sm:mb-4">Travel</span>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 leading-tight" style="font-family: 'Crimson Pro', serif;">
+                            <a href="post.html" class="hover:text-gray-600 transition">A Weekend in Kyoto</a>
+                        </h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed font-medium">
+                            Exploring the ancient temples and hidden tea houses of Japan's cultural capital. A journey through time, tradition, and tranquility.
+                        </p>
+                        <div class="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 font-medium">
+                            <time datetime="2024-12-10">Dec 10, 2024</time>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post Card 2 -->
+                <article class="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100">
+                    <a href="post.html">
+                        <div class="aspect-[4/3] bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80" alt="Minimalism" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
+                        </div>
+                    </a>
+                    <div class="p-5 sm:p-6 md:p-8">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold mb-3 sm:mb-4">Design</span>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 leading-tight" style="font-family: 'Crimson Pro', serif;">
+                            <a href="post.html" class="hover:text-gray-600 transition">Minimalism in 2026</a>
+                        </h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed font-medium">
+                            How design trends are evolving towards sustainability and essentialism. Less is more, and more meaningful.
+                        </p>
+                        <div class="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 font-medium">
+                            <time datetime="2024-12-05">Dec 5, 2024</time>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post Card 3 -->
+                <article class="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100">
+                    <a href="post.html">
+                        <div class="aspect-[4/3] bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="Coffee" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
+                        </div>
+                    </a>
+                    <div class="p-5 sm:p-6 md:p-8">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold mb-3 sm:mb-4">Food</span>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 leading-tight" style="font-family: 'Crimson Pro', serif;">
+                            <a href="post.html" class="hover:text-gray-600 transition">The Perfect Morning Ritual</a>
+                        </h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed font-medium">
+                            Starting your day with intention. How a simple morning routine can transform your entire outlook on life.
+                        </p>
+                        <div class="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 font-medium">
+                            <time datetime="2024-12-01">Dec 1, 2024</time>
+                            <span>•</span>
+                            <span>4 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post Card 4 -->
+                <article class="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100">
+                    <a href="post.html">
+                        <div class="aspect-[4/3] bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Workspace" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
+                        </div>
+                    </a>
+                    <div class="p-5 sm:p-6 md:p-8">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold mb-3 sm:mb-4">Productivity</span>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 leading-tight" style="font-family: 'Crimson Pro', serif;">
+                            <a href="post.html" class="hover:text-gray-600 transition">Building a Focused Workspace</a>
+                        </h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed font-medium">
+                            Creating an environment that fosters creativity and deep work. Simple changes that make a big difference.
+                        </p>
+                        <div class="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 font-medium">
+                            <time datetime="2024-11-28">Nov 28, 2024</time>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post Card 5 -->
+                <article class="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100">
+                    <a href="post.html">
+                        <div class="aspect-[4/3] bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="Photography" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
+                        </div>
+                    </a>
+                    <div class="p-5 sm:p-6 md:p-8">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold mb-3 sm:mb-4">Photography</span>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 leading-tight" style="font-family: 'Crimson Pro', serif;">
+                            <a href="post.html" class="hover:text-gray-600 transition">Capturing Moments That Matter</a>
+                        </h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed font-medium">
+                            The art of seeing beauty in everyday moments. Tips for developing your photographic eye and storytelling skills.
+                        </p>
+                        <div class="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 font-medium">
+                            <time datetime="2024-11-25">Nov 25, 2024</time>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post Card 6 -->
+                <article class="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-gray-100">
+                    <a href="post.html">
+                        <div class="aspect-[4/3] bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Wellness" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
+                        </div>
+                    </a>
+                    <div class="p-5 sm:p-6 md:p-8">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold mb-3 sm:mb-4">Wellness</span>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 leading-tight" style="font-family: 'Crimson Pro', serif;">
+                            <a href="post.html" class="hover:text-gray-600 transition">Mindful Living Practices</a>
+                        </h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed font-medium">
+                            Simple practices to bring more awareness and presence into your daily life. Small changes, profound impact.
+                        </p>
+                        <div class="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 font-medium">
+                            <time datetime="2024-11-20">Nov 20, 2024</time>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mt-12 sm:mt-16 font-semibold text-sm sm:text-base">
+                <button class="px-4 sm:px-5 py-2 sm:py-2.5 text-gray-400 cursor-not-allowed" disabled>Previous</button>
+                <a href="#" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-gray-900 text-white rounded-lg">1</a>
+                <a href="#" class="px-4 sm:px-5 py-2 sm:py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">2</a>
+                <a href="#" class="px-4 sm:px-5 py-2 sm:py-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">3</a>
+                <a href="#" class="px-4 sm:px-5 py-2 sm:py-2.5 text-gray-900 hover:bg-gray-100 rounded-lg transition">Next</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 sm:py-20 md:py-24 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6" style="font-family: 'Crimson Pro', serif;">Join the Community</h2>
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
+                Get weekly stories delivered to your inbox. No spam, just thoughtful content that matters.
+            </p>
+            <form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <input type="email" placeholder="Your email address" class="flex-1 px-5 sm:px-6 py-3 sm:py-4 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600 text-sm sm:text-base">
+                <button type="submit" class="px-6 sm:px-8 py-3 sm:py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition text-sm sm:text-base">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 sm:py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <a href="index.html" class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 block text-white" style="font-family: 'Crimson Pro', serif;">
+                        The Daily Journal
+                    </a>
+                    <p class="text-xs sm:text-sm leading-relaxed font-medium mb-4 sm:mb-6">
+                        Thoughtful writing on lifestyle, travel, design, and mindful living.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Crimson Pro', serif;">Categories</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="#" class="hover:text-white transition">Lifestyle</a></li>
+                        <li><a href="#" class="hover:text-white transition">Travel</a></li>
+                        <li><a href="#" class="hover:text-white transition">Design</a></li>
+                        <li><a href="#" class="hover:text-white transition">Food</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Crimson Pro', serif;">About</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="about.html" class="hover:text-white transition">Our Story</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Topics</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Crimson Pro', serif;">Archive</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="#" class="hover:text-white transition">2024</a></li>
+                        <li><a href="#" class="hover:text-white transition">2023</a></li>
+                        <li><a href="#" class="hover:text-white transition">2022</a></li>
+                        <li><a href="#" class="hover:text-white transition">All Posts</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 sm:pt-10 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm font-medium">
+                <p>&copy; 2024 The Daily Journal. All rights reserved.</p>
+                <div class="flex flex-wrap gap-4 sm:gap-6 justify-center">
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                    <a href="../../index.html" class="hover:text-white transition">Back to Themes</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

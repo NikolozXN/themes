@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPro - Transform Your Future Through Learning</title>
+    <meta name="description" content="Access over 1000+ courses from world-class universities and industry experts. Start learning today with EduPro.">
+    <link rel="stylesheet" href="../../../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl sm:text-2xl md:text-3xl font-black text-gray-900" style="font-family: 'Poppins', sans-serif;">EduPro</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6 lg:gap-8">
+                    <a href="index.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-blue-600 transition font-semibold">About</a>
+                    <a href="services.html" class="text-gray-600 hover:text-blue-600 transition font-semibold">Courses</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition font-semibold">Contact</a>
+                    <a href="#" class="px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-blue-500/30 transition text-sm sm:text-base">
+                        Student Portal
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 pb-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-blue-600 font-bold py-2">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-600 transition py-2">About</a>
+                <a href="services.html" class="text-gray-600 hover:text-blue-600 transition py-2">Courses</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition py-2">Contact</a>
+                <a href="#" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold text-center">Student Portal</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Premium Hero Section -->
+    <section class="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80" alt="Education" class="w-full h-full object-cover" loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-indigo-900/90 to-blue-900/95"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 md:py-24">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+                    <!-- Left Content -->
+                    <div class="text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-xs sm:text-sm font-bold text-white mb-4 sm:mb-6">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Trusted by 50,000+ Students
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-4 sm:mb-6 leading-[1.1] tracking-tight" style="font-family: 'Poppins', sans-serif;">
+                            Transform Your Future Through Learning
+                        </h1>
+                        <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                            Access over 1,000+ courses from world-class universities and industry experts. Start learning today and unlock your potential.
+                        </p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-8">
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1" style="font-family: 'Poppins', sans-serif;">50K+</div>
+                                <div class="text-xs sm:text-sm text-gray-300 font-semibold uppercase tracking-wider">Students</div>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1" style="font-family: 'Poppins', sans-serif;">1,000+</div>
+                                <div class="text-xs sm:text-sm text-gray-300 font-semibold uppercase tracking-wider">Courses</div>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1" style="font-family: 'Poppins', sans-serif;">200+</div>
+                                <div class="text-xs sm:text-sm text-gray-300 font-semibold uppercase tracking-wider">Instructors</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="services.html" class="px-8 py-4 bg-white text-blue-900 rounded-xl font-bold text-base sm:text-lg hover:bg-blue-50 transition shadow-xl hover:shadow-2xl text-center">
+                                Browse Courses
+                            </a>
+                            <a href="about.html" class="px-8 py-4 border-2 border-white/50 text-white rounded-xl font-bold text-base sm:text-lg hover:bg-white/10 transition text-center">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Search Bar -->
+                    <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
+                        <h2 class="text-xl sm:text-2xl font-black text-gray-900 mb-4 sm:mb-6" style="font-family: 'Poppins', sans-serif;">Find Your Course</h2>
+                        <div class="space-y-4 sm:space-y-5">
+                            <div>
+                                <label class="block text-xs sm:text-sm font-bold text-gray-700 mb-2">Search Courses</label>
+                                <input type="text" placeholder="What do you want to learn?" class="w-full px-4 sm:px-5 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base font-medium">
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-bold text-gray-700 mb-2">Category</label>
+                                    <select class="w-full px-4 sm:px-5 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm sm:text-base font-medium">
+                                        <option>All Categories</option>
+                                        <option>Programming</option>
+                                        <option>Design</option>
+                                        <option>Business</option>
+                                        <option>Marketing</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs sm:text-sm font-bold text-gray-700 mb-2">Level</label>
+                                    <select class="w-full px-4 sm:px-5 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm sm:text-base font-medium">
+                                        <option>All Levels</option>
+                                        <option>Beginner</option>
+                                        <option>Intermediate</option>
+                                        <option>Advanced</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold text-sm sm:text-base hover:shadow-xl hover:shadow-blue-500/30 transition hover:scale-[1.02]">
+                                Search Courses
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses -->
+    <section class="py-16 sm:py-20 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">Popular Courses</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                    Start Learning Today
+                </h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+                    Explore our highest-rated courses chosen by students like you
+                </p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Course Card 1 -->
+                <a href="services.html" class="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all hover:border-blue-500">
+                    <div class="relative h-48 sm:h-56 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="Web Development" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1.5 bg-blue-600 text-white rounded-lg text-xs font-bold">BESTSELLER</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition">
+                                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">PROGRAMMING</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <span class="text-xs font-semibold text-gray-700">4.9</span>
+                                <span class="text-xs text-gray-500">(2,450)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 group-hover:text-blue-600 transition" style="font-family: 'Poppins', sans-serif;">Web Development Bootcamp</h3>
+                        <p class="text-sm text-gray-600 mb-4 leading-relaxed font-medium">Master HTML, CSS, JavaScript, and modern frameworks. Build real-world projects and land your dream job.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-4 text-xs text-gray-600 font-semibold">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    12 Weeks
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                    45,230
+                                </span>
+                            </div>
+                            <span class="text-lg sm:text-xl font-black text-blue-600" style="font-family: 'Poppins', sans-serif;">$99</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 2 -->
+                <a href="services.html" class="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all hover:border-green-500">
+                    <div class="relative h-48 sm:h-56 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Digital Marketing" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1.5 bg-green-600 text-white rounded-lg text-xs font-bold">NEW</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition">
+                                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-bold text-green-600 bg-green-100 px-3 py-1 rounded-full">BUSINESS</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <span class="text-xs font-semibold text-gray-700">4.8</span>
+                                <span class="text-xs text-gray-500">(1,890)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 group-hover:text-green-600 transition" style="font-family: 'Poppins', sans-serif;">Digital Marketing Mastery</h3>
+                        <p class="text-sm text-gray-600 mb-4 leading-relaxed font-medium">Learn to grow your brand and reach more customers. SEO, social media, and content marketing strategies.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-4 text-xs text-gray-600 font-semibold">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    8 Weeks
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                    32,150
+                                </span>
+                            </div>
+                            <span class="text-lg sm:text-xl font-black text-green-600" style="font-family: 'Poppins', sans-serif;">$79</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 3 -->
+                <a href="services.html" class="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all hover:border-purple-500">
+                    <div class="relative h-48 sm:h-56 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80" alt="UI/UX Design" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1.5 bg-purple-600 text-white rounded-lg text-xs font-bold">POPULAR</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition">
+                                <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-bold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">DESIGN</span>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <span class="text-xs font-semibold text-gray-700">4.7</span>
+                                <span class="text-xs text-gray-500">(3,210)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-black mb-2 text-gray-900 group-hover:text-purple-600 transition" style="font-family: 'Poppins', sans-serif;">UI/UX Design Fundamentals</h3>
+                        <p class="text-sm text-gray-600 mb-4 leading-relaxed font-medium">Create beautiful and functional user interfaces. Learn design principles, prototyping, and user research.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-4 text-xs text-gray-600 font-semibold">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    10 Weeks
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                    28,940
+                                </span>
+                            </div>
+                            <span class="text-lg sm:text-xl font-black text-purple-600" style="font-family: 'Poppins', sans-serif;">$89</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 sm:py-20 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">Why EduPro</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                    Learn Your Way
+                </h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+                    Everything you need to succeed in your learning journey
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="text-center p-6 sm:p-8 bg-white rounded-2xl hover:shadow-xl transition-all border border-gray-200">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-3 text-gray-900" style="font-family: 'Poppins', sans-serif;">Self-Paced Learning</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">Learn at your own speed with lifetime access to all course materials</p>
+                </div>
+                <div class="text-center p-6 sm:p-8 bg-white rounded-2xl hover:shadow-xl transition-all border border-gray-200">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-3 text-gray-900" style="font-family: 'Poppins', sans-serif;">Certificates</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">Earn industry-recognized certificates upon course completion</p>
+                </div>
+                <div class="text-center p-6 sm:p-8 bg-white rounded-2xl hover:shadow-xl transition-all border border-gray-200">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-3 text-gray-900" style="font-family: 'Poppins', sans-serif;">Expert Instructors</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">Learn from industry experts with years of real-world experience</p>
+                </div>
+                <div class="text-center p-6 sm:p-8 bg-white rounded-2xl hover:shadow-xl transition-all border border-gray-200">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-3 text-gray-900" style="font-family: 'Poppins', sans-serif;">24/7 Support</h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">Get help whenever you need it with our dedicated support team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 sm:py-20 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">Testimonials</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                    What Our Students Say
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+                    <div class="flex gap-1 mb-4 sm:mb-6 text-yellow-400">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed font-medium">
+                        "EduPro completely transformed my career. The Web Development Bootcamp gave me all the skills I needed to land my dream job at a tech company. Highly recommended!"
+                    </p>
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Student" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-gray-200" loading="lazy">
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm sm:text-base" style="font-family: 'Poppins', sans-serif;">Alex Johnson</div>
+                            <div class="text-xs sm:text-sm text-gray-600 font-medium">Software Developer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+                    <div class="flex gap-1 mb-4 sm:mb-6 text-yellow-400">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed font-medium">
+                        "The instructors are amazing and the course materials are top-notch. I've learned so much in just a few weeks. The self-paced format fits perfectly with my schedule."
+                    </p>
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Student" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-gray-200" loading="lazy">
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm sm:text-base" style="font-family: 'Poppins', sans-serif;">Sarah Martinez</div>
+                            <div class="text-xs sm:text-sm text-gray-600 font-medium">Marketing Manager</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+                    <div class="flex gap-1 mb-4 sm:mb-6 text-yellow-400">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed font-medium">
+                        "Best investment I've made in my education. The courses are comprehensive, well-structured, and the community support is incredible. Thank you EduPro!"
+                    </p>
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Student" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-gray-200" loading="lazy">
+                        <div>
+                            <div class="font-bold text-gray-900 text-sm sm:text-base" style="font-family: 'Poppins', sans-serif;">Michael Chen</div>
+                            <div class="text-xs sm:text-sm text-gray-600 font-medium">Product Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight text-white" style="font-family: 'Poppins', sans-serif;">
+                Ready to Start Learning?
+            </h2>
+            <p class="text-base sm:text-lg text-blue-100 mb-8 sm:mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
+                Join thousands of students already learning with EduPro. Start your journey today and unlock your potential.
+            </p>
+            <a href="services.html" class="inline-flex items-center gap-2 px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-white text-blue-900 font-bold rounded-xl hover:bg-blue-50 transition shadow-2xl hover:shadow-3xl hover:scale-105 text-base sm:text-lg">
+                Browse All Courses
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 sm:py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl sm:text-2xl md:text-3xl font-black text-white" style="font-family: 'Poppins', sans-serif;">EduPro</span>
+                    </a>
+                    <p class="text-xs sm:text-sm leading-relaxed font-medium mb-4 sm:mb-6 text-gray-500">
+                        Empowering learners worldwide with accessible, high-quality education. Transform your future through learning.
+                    </p>
+                    <div class="flex gap-3 sm:gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-black mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Poppins', sans-serif;">Courses</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="services.html" class="hover:text-white transition">All Courses</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Programming</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Design</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Business</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Poppins', sans-serif;">Company</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Poppins', sans-serif;">Support</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="../../index.html" class="hover:text-white transition">Back to Themes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 sm:pt-10 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm font-medium">
+                <p>&copy; 2024 EduPro. All rights reserved.</p>
+                <div class="flex flex-wrap gap-4 sm:gap-6 justify-center">
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                    <a href="#" class="hover:text-white transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

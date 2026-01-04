@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Pro - Enterprise Business Solutions</title>
+    <link rel="stylesheet" href="../../../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'DM Sans', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="antialiased text-gray-900 bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-xl border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-700 to-indigo-800 rounded-lg flex items-center justify-center shadow-lg">
+                        <svg class="w-4 h-4 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xl sm:text-2xl font-black tracking-tight" style="font-family: 'DM Sans', sans-serif;">CorporatePro</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-10">
+                    <a href="index.html" class="text-sm font-bold text-blue-700">Home</a>
+                    <a href="about.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">About</a>
+                    <a href="services.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">Services</a>
+                    <a href="contact.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition">Contact</a>
+                    <a href="#" class="px-5 lg:px-6 py-2.5 lg:py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl hover:shadow-xl hover:scale-105 transition-all">Get Started</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-gray-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-gray-200">
+                <div class="flex flex-col gap-3">
+                    <a href="index.html" class="text-sm font-bold text-blue-700 py-2">Home</a>
+                    <a href="about.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">About</a>
+                    <a href="services.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">Services</a>
+                    <a href="contact.html" class="text-sm font-semibold text-gray-700 hover:text-blue-700 transition py-2">Contact</a>
+                    <a href="#" class="px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl text-center">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Modern Hero Section -->
+    <section class="relative pt-24 sm:pt-32 pb-16 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-indigo-200/30 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+                <div>
+                    <div class="inline-flex flex-wrap items-center px-4 sm:px-5 py-2 sm:py-2.5 bg-white/80 backdrop-blur-sm border border-blue-200 text-blue-800 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-sm">
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="whitespace-nowrap">Trusted by Fortune 500</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 sm:mb-8" style="font-family: 'DM Sans', sans-serif;">
+                        Transform Your Business with
+                        <span class="block mt-2 sm:mt-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800">Enterprise Solutions</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 sm:mb-10 leading-relaxed font-semibold max-w-xl">
+                        Drive growth, optimize operations, and scale with confidence. Our proven strategies and cutting-edge technology deliver measurable results.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
+                        <a href="#" class="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-sm sm:text-base font-black text-white bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl sm:rounded-2xl shadow-2xl shadow-blue-500/30 hover:shadow-3xl hover:shadow-blue-500/40 hover:scale-105 transition-all">
+                            Schedule Consultation
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-sm sm:text-base font-bold text-gray-800 bg-white border-2 border-gray-300 rounded-xl sm:rounded-2xl hover:border-blue-600 hover:text-blue-700 transition-all shadow-lg">
+                            View Case Studies
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-4 sm:gap-6 lg:gap-10">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-gray-900 mb-1" style="font-family: 'DM Sans', sans-serif;">500+</div>
+                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Global Clients</div>
+                        </div>
+                        <div class="hidden sm:block w-px h-12 sm:h-14 bg-gray-300"></div>
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-gray-900 mb-1" style="font-family: 'DM Sans', sans-serif;">98%</div>
+                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Satisfaction Rate</div>
+                        </div>
+                        <div class="hidden sm:block w-px h-12 sm:h-14 bg-gray-300"></div>
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-gray-900 mb-1" style="font-family: 'DM Sans', sans-serif;">$2.4B</div>
+                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wide">Revenue Impact</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative mt-8 lg:mt-0">
+                    <div class="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80" alt="Corporate team" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-4 sm:-bottom-8 -left-4 sm:-left-8 bg-white rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 max-w-xs border border-gray-100">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-xs sm:text-sm text-gray-600 font-semibold mb-1">Average ROI</div>
+                                <div class="text-2xl sm:text-3xl font-black text-gray-900" style="font-family: 'DM Sans', sans-serif;">340%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="py-12 sm:py-16 bg-white border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 sm:mb-10">
+                <p class="text-xs sm:text-sm font-black text-gray-500 uppercase tracking-widest">Trusted by Industry Leaders</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 items-center opacity-60">
+                <div class="flex items-center justify-center">
+                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400" style="font-family: 'DM Sans', sans-serif;">MICROSOFT</div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400" style="font-family: 'DM Sans', sans-serif;">AMAZON</div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400" style="font-family: 'DM Sans', sans-serif;">SALESFORCE</div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="text-lg sm:text-xl md:text-2xl font-black text-gray-400" style="font-family: 'DM Sans', sans-serif;">IBM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 sm:mb-6" style="font-family: 'DM Sans', sans-serif;">
+                    Comprehensive Enterprise Solutions
+                </h2>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-semibold px-4">
+                    End-to-end services designed to accelerate your digital transformation and drive sustainable growth
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+                    <div class="relative h-32 sm:h-36 bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80" alt="Business Analytics" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3">
+                            <div class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-indigo-700 transition-all">
+                                <svg class="w-5 h-5 text-blue-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Business Analytics</h3>
+                        <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                            Transform raw data into actionable insights with our advanced analytics platform. Make data-driven decisions faster.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900 transition-colors">
+                            Learn more
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-indigo-600 group-hover:to-purple-700 transition-all">
+                        <svg class="w-6 h-6 text-indigo-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Process Automation</h3>
+                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                        Streamline operations and reduce costs by up to 60% with intelligent automation solutions tailored to your workflow.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                        Learn more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-purple-600 group-hover:to-pink-700 transition-all">
+                        <svg class="w-6 h-6 text-purple-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Cloud Infrastructure</h3>
+                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                        Scale effortlessly with enterprise-grade cloud solutions. 99.99% uptime SLA with global redundancy.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                        Learn more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-green-600 group-hover:to-emerald-700 transition-all">
+                        <svg class="w-6 h-6 text-green-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Cybersecurity</h3>
+                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                        Protect your assets with military-grade security. 24/7 threat monitoring and instant incident response.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                        Learn more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-yellow-600 group-hover:to-orange-700 transition-all">
+                        <svg class="w-6 h-6 text-yellow-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Consulting Services</h3>
+                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                        Strategic guidance from industry experts. Navigate complex challenges and unlock new opportunities.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                        Learn more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-red-600 group-hover:to-rose-700 transition-all">
+                        <svg class="w-6 h-6 text-red-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black mb-2" style="font-family: 'DM Sans', sans-serif;">Performance Optimization</h3>
+                    <p class="text-sm text-gray-700 mb-3 leading-relaxed font-semibold">
+                        Maximize efficiency and reduce bottlenecks. Our optimization framework delivers 10x faster results.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-sm text-blue-700 font-bold hover:text-blue-900">
+                        Learn more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Feature -->
+    <section class="py-16 sm:py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
+                <div>
+                    <div class="inline-block px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-bold mb-6 sm:mb-8">
+                        Case Study
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 sm:mb-8" style="font-family: 'DM Sans', sans-serif;">
+                        How We Helped TechCorp Increase Revenue by 340%
+                    </h2>
+                    <p class="text-lg sm:text-xl text-gray-700 mb-8 sm:mb-10 leading-relaxed font-semibold">
+                        TechCorp needed to modernize their legacy systems and scale operations globally. Our comprehensive digital transformation strategy delivered exceptional results in just 18 months.
+                    </p>
+                    <div class="space-y-4 sm:space-y-6 mb-10 sm:mb-12">
+                        <div class="flex items-start gap-4 sm:gap-5">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2" style="font-family: 'DM Sans', sans-serif;">340% Revenue Growth</h4>
+                                <p class="text-sm sm:text-base text-gray-700 font-semibold">Expanded to 12 new markets with automated operations</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 sm:gap-5">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2" style="font-family: 'DM Sans', sans-serif;">60% Cost Reduction</h4>
+                                <p class="text-sm sm:text-base text-gray-700 font-semibold">Streamlined processes saved $4.2M annually</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 sm:gap-5">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-lg sm:text-xl mb-1 sm:mb-2" style="font-family: 'DM Sans', sans-serif;">10x Faster Deployment</h4>
+                                <p class="text-sm sm:text-base text-gray-700 font-semibold">From weeks to hours with CI/CD automation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-flex items-center px-8 sm:px-10 py-4 sm:py-5 text-sm sm:text-base font-black text-white bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl sm:rounded-2xl shadow-2xl hover:shadow-3xl transition-all">
+                        Read Full Case Study
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="relative mt-8 lg:mt-0">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Analytics dashboard" class="rounded-2xl sm:rounded-3xl shadow-2xl w-full">
+                    <div class="absolute -bottom-4 sm:-bottom-10 -left-4 sm:-left-10 bg-white rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-gray-100 max-w-[200px] sm:max-w-xs">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-4xl sm:text-6xl">📈</div>
+                            <div>
+                                <div class="text-xs sm:text-sm text-gray-600 font-semibold mb-1">Total Impact</div>
+                                <div class="text-2xl sm:text-3xl font-black text-gray-900" style="font-family: 'DM Sans', sans-serif;">$12.4M</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-blue-700 via-indigo-800 to-blue-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80')] bg-cover bg-center opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 sm:mb-8" style="font-family: 'DM Sans', sans-serif;">
+                Ready to Transform Your Business?
+            </h2>
+            <p class="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 sm:mb-12 max-w-2xl mx-auto font-semibold px-4">
+                Join 500+ companies that have already accelerated their growth with our enterprise solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+                <a href="#" class="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-sm sm:text-base font-black text-blue-700 bg-white rounded-xl sm:rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all">
+                    Schedule Free Consultation
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+                <a href="#" class="inline-flex items-center justify-center px-8 sm:px-10 py-4 sm:py-5 text-sm sm:text-base font-bold text-white border-2 border-white rounded-xl sm:rounded-2xl hover:bg-white hover:text-blue-700 transition-all">
+                    View Our Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-700 to-indigo-800 rounded-lg flex items-center justify-center">
+                            <svg class="w-4 h-4 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl sm:text-2xl font-black text-white" style="font-family: 'DM Sans', sans-serif;">CorporatePro</span>
+                    </div>
+                    <p class="text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 font-semibold">
+                        Empowering enterprises with cutting-edge technology and strategic consulting since 2010.
+                    </p>
+                    <div class="flex gap-2 sm:gap-3">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center hover:bg-blue-700 transition">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center hover:bg-blue-700 transition">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-lg sm:rounded-xl flex items-center justify-center hover:bg-blue-700 transition">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-black mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm" style="font-family: 'DM Sans', sans-serif;">Solutions</h3>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-semibold">
+                        <li><a href="#" class="hover:text-white transition">Analytics</a></li>
+                        <li><a href="#" class="hover:text-white transition">Automation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cloud Services</a></li>
+                        <li><a href="#" class="hover:text-white transition">Security</a></li>
+                        <li><a href="#" class="hover:text-white transition">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-black mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm" style="font-family: 'DM Sans', sans-serif;">Company</h3>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-semibold">
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Partners</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-black mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm" style="font-family: 'DM Sans', sans-serif;">Contact</h3>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-semibold">
+                        <li>1234 Business Ave</li>
+                        <li>New York, NY 10001</li>
+                        <li class="pt-2">
+                            <a href="tel:+1234567890" class="hover:text-white transition">+1 (234) 567-890</a>
+                        </li>
+                        <li>
+                            <a href="mailto:hello@corporatepro.com" class="hover:text-white transition">hello@corporatepro.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 sm:pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm font-semibold">
+                <p>&copy; 2024 CorporatePro. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

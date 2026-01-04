@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS 2026 - Where Innovation Meets Inspiration</title>
+    <meta name="description" content="The world's most exclusive gathering of visionaries, innovators, and change-makers. June 12-14, 2026 in San Francisco.">
+    <link rel="stylesheet" href="../../../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Bebas Neue', cursive; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.8); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-glow { animation: glow 3s ease-in-out infinite; }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 8s ease infinite;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-black text-white antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-black/60 backdrop-blur-2xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform animate-glow">
+                        <span class="text-white font-black text-lg sm:text-xl" style="font-family: 'Bebas Neue', cursive;">N</span>
+                    </div>
+                    <span class="text-xl sm:text-2xl md:text-3xl font-black tracking-wider" style="font-family: 'Bebas Neue', cursive;">NEXUS</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6 lg:gap-8">
+                    <a href="index.html" class="text-white font-bold border-b-2 border-white pb-1 text-sm uppercase tracking-widest">Home</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition font-semibold text-sm uppercase tracking-widest">About</a>
+                    <a href="services.html" class="text-gray-400 hover:text-white transition font-semibold text-sm uppercase tracking-widest">Schedule</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white transition font-semibold text-sm uppercase tracking-widest">Contact</a>
+                    <a href="contact.html" class="px-5 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-full font-bold hover:shadow-lg hover:shadow-purple-500/30 transition text-xs sm:text-sm uppercase tracking-widest">
+                        Get Tickets
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-2xl border-t border-white/5 pb-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-white font-bold py-2 text-sm uppercase tracking-widest">Home</a>
+                <a href="about.html" class="text-gray-400 hover:text-white transition py-2 text-sm uppercase tracking-widest">About</a>
+                <a href="services.html" class="text-gray-400 hover:text-white transition py-2 text-sm uppercase tracking-widest">Schedule</a>
+                <a href="contact.html" class="text-gray-400 hover:text-white transition py-2 text-sm uppercase tracking-widest">Contact</a>
+                <a href="contact.html" class="px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-full font-bold text-center text-sm uppercase tracking-widest">Get Tickets</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Ultra Premium Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24">
+        <!-- Premium Background -->
+        <div class="absolute inset-0 bg-black"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-950/40 via-black to-pink-950/40"></div>
+        
+        <!-- Animated Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl"></div>
+        
+        <!-- Subtle Pattern Overlay -->
+        <div class="absolute inset-0 opacity-[0.03] bg-[url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&q=80')] bg-cover bg-center"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Date Badge -->
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-xs font-bold text-white/90 mb-8 sm:mb-10">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="uppercase tracking-wider">JUNE 12-14, 2026 • SAN FRANCISCO</span>
+                </div>
+                
+                <!-- Main Headline -->
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 sm:mb-8 leading-[0.95] tracking-tight gradient-text" style="font-family: 'Bebas Neue', cursive; letter-spacing: -0.02em;">
+                    NEXUS 2026
+                </h1>
+                
+                <!-- Subheadline -->
+                <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-4 sm:mb-6 font-bold leading-tight" style="font-family: 'Bebas Neue', cursive; letter-spacing: 0.05em;">
+                    WHERE INNOVATION MEETS INSPIRATION
+                </p>
+                
+                <p class="text-base sm:text-lg md:text-xl text-gray-400 mb-10 sm:mb-12 leading-relaxed max-w-2xl mx-auto font-medium" style="font-family: 'Space Grotesk', sans-serif;">
+                    The world's most exclusive gathering of visionaries, innovators, and change-makers. Three days that will redefine your perspective.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center mb-14 sm:mb-16">
+                    <a href="contact.html" class="group relative px-8 sm:px-10 md:px-12 py-4 sm:py-5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-xl sm:rounded-2xl font-black text-sm sm:text-base md:text-lg shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+                        <span class="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+                            Secure Your Spot
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                    <a href="services.html" class="px-8 sm:px-10 md:px-12 py-4 sm:py-5 border-2 border-white/20 text-white rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg hover:bg-white/5 hover:border-white/40 transition-all duration-300 backdrop-blur-sm">
+                        View Schedule
+                    </a>
+                </div>
+                
+                <!-- Stats Bar -->
+                <div class="grid grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">50+</div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-semibold uppercase tracking-wider">Speakers</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">3</div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-semibold uppercase tracking-wider">Days</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">5K+</div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-semibold uppercase tracking-wider">Attendees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-5 h-5 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Premium Speakers Section -->
+    <section class="py-20 sm:py-24 md:py-32 bg-gradient-to-b from-black via-purple-950/20 to-black border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 md:mb-20">
+                <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 uppercase tracking-widest">Featured Speakers</span>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight gradient-text" style="font-family: 'Bebas Neue', cursive;">
+                    Visionaries & Innovators
+                </h2>
+                <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto font-medium" style="font-family: 'Space Grotesk', sans-serif;">
+                    Learn from the world's most influential leaders, creators, and thought leaders
+                </p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Speaker 1 -->
+                <div class="group relative">
+                    <div class="relative h-64 sm:h-72 lg:h-80 rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-white/10 group-hover:border-purple-500/50 transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Speaker" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 grayscale group-hover:grayscale-0" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                            <h3 class="text-xl sm:text-2xl font-black text-white mb-1 group-hover:text-purple-400 transition" style="font-family: 'Bebas Neue', cursive;">Elon Musk</h3>
+                            <p class="text-sm text-gray-300 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">CEO, Tesla & SpaceX</p>
+                        </div>
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="group relative">
+                    <div class="relative h-64 sm:h-72 lg:h-80 rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-white/10 group-hover:border-blue-500/50 transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80" alt="Speaker" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 grayscale group-hover:grayscale-0" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                            <h3 class="text-xl sm:text-2xl font-black text-white mb-1 group-hover:text-blue-400 transition" style="font-family: 'Bebas Neue', cursive;">Satya Nadella</h3>
+                            <p class="text-sm text-gray-300 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">CEO, Microsoft</p>
+                        </div>
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="group relative">
+                    <div class="relative h-64 sm:h-72 lg:h-80 rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-pink-600/20 to-purple-600/20 border border-white/10 group-hover:border-pink-500/50 transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Speaker" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 grayscale group-hover:grayscale-0" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                            <h3 class="text-xl sm:text-2xl font-black text-white mb-1 group-hover:text-pink-400 transition" style="font-family: 'Bebas Neue', cursive;">Mira Murati</h3>
+                            <p class="text-sm text-gray-300 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">CTO, OpenAI</p>
+                        </div>
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 4 -->
+                <div class="group relative">
+                    <div class="relative h-64 sm:h-72 lg:h-80 rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-cyan-600/20 to-blue-600/20 border border-white/10 group-hover:border-cyan-500/50 transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80" alt="Speaker" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 grayscale group-hover:grayscale-0" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                            <h3 class="text-xl sm:text-2xl font-black text-white mb-1 group-hover:text-cyan-400 transition" style="font-family: 'Bebas Neue', cursive;">Tim Cook</h3>
+                            <p class="text-sm text-gray-300 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">CEO, Apple</p>
+                        </div>
+                        <div class="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Schedule Preview -->
+    <section class="py-20 sm:py-24 md:py-32 bg-black border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 md:mb-20">
+                <span class="inline-block px-4 py-2 bg-pink-500/20 text-pink-400 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 uppercase tracking-widest">Event Schedule</span>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight gradient-text" style="font-family: 'Bebas Neue', cursive;">
+                    Three Days of Excellence
+                </h2>
+            </div>
+            
+            <div class="space-y-6 sm:space-y-8">
+                <!-- Day 1 -->
+                <div class="bg-gradient-to-r from-purple-900/30 via-black to-pink-900/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/10 hover:border-purple-500/50 transition-all duration-500">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                            <span class="text-2xl sm:text-3xl font-black text-white" style="font-family: 'Bebas Neue', cursive;">01</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1" style="font-family: 'Bebas Neue', cursive;">Day One: Vision</h3>
+                            <p class="text-sm sm:text-base text-gray-400 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">Opening Keynotes • Innovation Talks • Networking</p>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-purple-400 text-xs font-bold mb-2 uppercase tracking-wider">9:00 AM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Opening Ceremony</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">Welcome to NEXUS 2026</p>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-pink-400 text-xs font-bold mb-2 uppercase tracking-wider">11:00 AM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Keynote: Future of AI</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">Mira Murati</p>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-blue-400 text-xs font-bold mb-2 uppercase tracking-wider">2:00 PM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Innovation Panel</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">Industry Leaders</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="bg-gradient-to-r from-blue-900/30 via-black to-purple-900/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/10 hover:border-blue-500/50 transition-all duration-500">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                            <span class="text-2xl sm:text-3xl font-black text-white" style="font-family: 'Bebas Neue', cursive;">02</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1" style="font-family: 'Bebas Neue', cursive;">Day Two: Innovation</h3>
+                            <p class="text-sm sm:text-base text-gray-400 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">Workshops • Masterclasses • Tech Demos</p>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-blue-400 text-xs font-bold mb-2 uppercase tracking-wider">9:00 AM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Elon Musk Keynote</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">The Future of Space</p>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-purple-400 text-xs font-bold mb-2 uppercase tracking-wider">1:00 PM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Tech Workshops</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">Hands-on Learning</p>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-pink-400 text-xs font-bold mb-2 uppercase tracking-wider">4:00 PM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Networking Mixer</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">Connect & Collaborate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="bg-gradient-to-r from-pink-900/30 via-black to-purple-900/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/10 hover:border-pink-500/50 transition-all duration-500">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-pink-600 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                            <span class="text-2xl sm:text-3xl font-black text-white" style="font-family: 'Bebas Neue', cursive;">03</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1" style="font-family: 'Bebas Neue', cursive;">Day Three: Impact</h3>
+                            <p class="text-sm sm:text-base text-gray-400 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">Closing Keynotes • Awards • Celebration</p>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-pink-400 text-xs font-bold mb-2 uppercase tracking-wider">10:00 AM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Tim Cook Keynote</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">Design & Innovation</p>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-purple-400 text-xs font-bold mb-2 uppercase tracking-wider">2:00 PM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Innovation Awards</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">Celebrating Excellence</p>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/10">
+                            <div class="text-blue-400 text-xs font-bold mb-2 uppercase tracking-wider">6:00 PM</div>
+                            <h4 class="text-lg sm:text-xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Closing Gala</h4>
+                            <p class="text-sm text-gray-400 font-medium" style="font-family: 'Space Grotesk', sans-serif;">Final Celebration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10 sm:mt-12">
+                <a href="services.html" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-xl font-bold hover:bg-white/20 transition text-sm sm:text-base uppercase tracking-widest">
+                    View Full Schedule
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Ticket Pricing -->
+    <section class="py-20 sm:py-24 md:py-32 bg-gradient-to-b from-black via-purple-950/30 to-black border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 md:mb-20">
+                <span class="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 uppercase tracking-widest">Pricing</span>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight gradient-text" style="font-family: 'Bebas Neue', cursive;">
+                    Choose Your Experience
+                </h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Standard Ticket -->
+                <div class="bg-gradient-to-br from-gray-900/50 to-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-white/30 transition-all">
+                    <div class="mb-6">
+                        <h3 class="text-2xl sm:text-3xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Standard</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl sm:text-5xl font-black text-white" style="font-family: 'Bebas Neue', cursive;">$499</span>
+                            <span class="text-sm text-gray-400">/person</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Access to all keynotes</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Networking sessions</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Conference materials</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block w-full px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl font-bold hover:bg-white/20 transition text-center text-sm uppercase tracking-widest">
+                        Get Tickets
+                    </a>
+                </div>
+
+                <!-- VIP Ticket -->
+                <div class="bg-gradient-to-br from-purple-900/50 via-pink-900/50 to-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-purple-500/50 hover:border-purple-500 transition-all relative overflow-hidden">
+                    <div class="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-xs font-black uppercase tracking-widest">POPULAR</div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl sm:text-3xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">VIP</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl sm:text-5xl font-black text-white" style="font-family: 'Bebas Neue', cursive;">$1,299</span>
+                            <span class="text-sm text-gray-400">/person</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Everything in Standard</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>VIP lounge access</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Meet & greet with speakers</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Premium catering</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-purple-500/30 transition text-center text-sm uppercase tracking-widest">
+                        Get VIP Tickets
+                    </a>
+                </div>
+
+                <!-- Premium Ticket -->
+                <div class="bg-gradient-to-br from-gray-900/50 to-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-white/30 transition-all">
+                    <div class="mb-6">
+                        <h3 class="text-2xl sm:text-3xl font-black text-white mb-2" style="font-family: 'Bebas Neue', cursive;">Premium</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl sm:text-5xl font-black text-white" style="font-family: 'Bebas Neue', cursive;">$2,999</span>
+                            <span class="text-sm text-gray-400">/person</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Everything in VIP</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Private speaker sessions</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Exclusive after-party access</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-gray-300">
+                            <svg class="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Lifetime community access</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block w-full px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl font-bold hover:bg-white/20 transition text-center text-sm uppercase tracking-widest">
+                        Get Premium
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 sm:py-24 md:py-32 bg-black border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16 md:mb-20">
+                <span class="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-400 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 uppercase tracking-widest">Testimonials</span>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight gradient-text" style="font-family: 'Bebas Neue', cursive;">
+                    What Attendees Say
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-gradient-to-br from-purple-900/30 to-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10">
+                    <div class="flex gap-1 mb-4 sm:mb-6 text-yellow-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed font-medium" style="font-family: 'Space Grotesk', sans-serif;">
+                        "NEXUS completely transformed my perspective on innovation. The speakers were world-class, and the networking opportunities were unparalleled. Worth every penny!"
+                    </p>
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-black text-base sm:text-lg flex-shrink-0" style="font-family: 'Bebas Neue', cursive;">SM</div>
+                        <div>
+                            <div class="font-black text-white text-sm sm:text-base" style="font-family: 'Bebas Neue', cursive;">Sarah Mitchell</div>
+                            <div class="text-xs sm:text-sm text-gray-400 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">Tech Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-900/30 to-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10">
+                    <div class="flex gap-1 mb-4 sm:mb-6 text-yellow-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed font-medium" style="font-family: 'Space Grotesk', sans-serif;">
+                        "The production quality was insane. Every detail was perfect, from the stage design to the speaker lineup. This is how events should be done."
+                    </p>
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-black text-base sm:text-lg flex-shrink-0" style="font-family: 'Bebas Neue', cursive;">JD</div>
+                        <div>
+                            <div class="font-black text-white text-sm sm:text-base" style="font-family: 'Bebas Neue', cursive;">James Davis</div>
+                            <div class="text-xs sm:text-sm text-gray-400 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">Product Manager</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-900/30 to-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10">
+                    <div class="flex gap-1 mb-4 sm:mb-6 text-yellow-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed font-medium" style="font-family: 'Space Grotesk', sans-serif;">
+                        "I've been to dozens of conferences, but NEXUS stands in a league of its own. The energy, the content, the people - absolutely extraordinary experience."
+                    </p>
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-pink-600 to-purple-600 rounded-full flex items-center justify-center text-white font-black text-base sm:text-lg flex-shrink-0" style="font-family: 'Bebas Neue', cursive;">MR</div>
+                        <div>
+                            <div class="font-black text-white text-sm sm:text-base" style="font-family: 'Bebas Neue', cursive;">Maria Rodriguez</div>
+                            <div class="text-xs sm:text-sm text-gray-400 font-semibold" style="font-family: 'Space Grotesk', sans-serif;">Design Director</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium CTA Section -->
+    <section class="py-20 sm:py-24 md:py-32 bg-gradient-to-br from-purple-900 via-black to-pink-900 relative overflow-hidden border-y border-white/5">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight gradient-text" style="font-family: 'Bebas Neue', cursive;">
+                Don't Miss Out
+            </h2>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 leading-relaxed font-medium px-4" style="font-family: 'Space Grotesk', sans-serif;">
+                Early bird tickets are selling fast. Secure your spot at the most exclusive tech event of 2026.
+            </p>
+            <a href="contact.html" class="inline-flex items-center gap-3 px-10 sm:px-12 md:px-16 py-5 sm:py-6 md:py-7 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg md:text-xl shadow-2xl shadow-purple-500/40 hover:shadow-3xl hover:shadow-purple-500/60 hover:scale-105 transition-all duration-300 uppercase tracking-widest">
+                Get Your Ticket Now
+                <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12 sm:py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/20">
+                            <span class="text-white font-black text-lg sm:text-xl" style="font-family: 'Bebas Neue', cursive;">N</span>
+                        </div>
+                        <span class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-wider" style="font-family: 'Bebas Neue', cursive;">NEXUS</span>
+                    </a>
+                    <p class="text-xs sm:text-sm leading-relaxed font-medium mb-4 sm:mb-6 text-gray-500" style="font-family: 'Space Grotesk', sans-serif;">
+                        The world's most exclusive gathering of visionaries, innovators, and change-makers.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-black mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Bebas Neue', cursive;">Event</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Schedule</a></li>
+                        <li><a href="#" class="hover:text-white transition">Speakers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Venue</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Bebas Neue', cursive;">Tickets</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="contact.html" class="hover:text-white transition">Buy Tickets</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition">Group Rates</a></li>
+                        <li><a href="#" class="hover:text-white transition">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black mb-4 sm:mb-6 text-sm uppercase tracking-wider text-white" style="font-family: 'Bebas Neue', cursive;">Connect</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-medium">
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-white transition">Social Media</a></li>
+                        <li><a href="../../index.html" class="hover:text-white transition">Back to Themes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 sm:pt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm font-medium">
+                <p>&copy; 2026 NEXUS Conference. All rights reserved.</p>
+                <div class="flex flex-wrap gap-4 sm:gap-6 justify-center">
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                    <a href="#" class="hover:text-white transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

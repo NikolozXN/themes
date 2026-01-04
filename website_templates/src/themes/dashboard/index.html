@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Overview</title>
+    <link rel="stylesheet" href="../../../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-200 flex h-screen overflow-hidden">
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 lg:hidden hidden" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-r border-gray-200 dark:border-gray-700 flex flex-col flex-shrink-0 transition-all duration-300 z-50 transform -translate-x-full lg:translate-x-0">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                </div>
+                <span class="font-black">DashBoard</span>
+            </a>
+            <button onclick="toggleSidebar()" class="lg:hidden p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl shadow-lg shadow-indigo-500/20 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <span class="font-semibold">Overview</span>
+            </a>
+            <a href="admin.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                <span class="font-medium">Analytics</span>
+            </a>
+            <a href="services.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <span class="font-medium">Users</span>
+            </a>
+            <a href="about.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                <span class="font-medium">Profile</span>
+            </a>
+            <a href="contact.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <span class="font-medium">Messages</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+            <a href="../../index.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition text-sm font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                Exit Demo
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        
+        <!-- Topbar -->
+        <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex justify-between items-center z-10 transition-colors duration-200">
+            <div class="flex items-center gap-4">
+                <button onclick="toggleSidebar()" class="lg:hidden p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <h2 class="text-sm sm:text-base lg:text-xl font-bold text-gray-900 dark:text-gray-100">Dashboard</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="dark-mode-toggle" class="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                    <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+                <button class="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition relative">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                </button>
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/20 cursor-pointer">JD</div>
+            </div>
+        </header>
+
+        <!-- Content Scrollable -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 dark:bg-gray-900 p-6 transition-colors duration-200">
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase">Total Users</h3>
+                        <span class="p-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </span>
+                    </div>
+                    <span class="text-3xl font-bold text-gray-900 dark:text-gray-100">1,257</span>
+                    <span class="text-green-500 text-sm font-bold ml-2">↑ 12%</span>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">vs last month</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase">Revenue</h3>
+                        <span class="p-2 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </span>
+                    </div>
+                    <span class="text-3xl font-bold text-gray-900 dark:text-gray-100">$45,200</span>
+                    <span class="text-green-500 text-sm font-bold ml-2">↑ 8%</span>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">vs last month</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase">Sessions</h3>
+                        <span class="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </span>
+                    </div>
+                    <span class="text-3xl font-bold text-gray-900 dark:text-gray-100">8.4k</span>
+                    <span class="text-red-500 text-sm font-bold ml-2">↓ 2%</span>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">vs last month</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase">Bounce Rate</h3>
+                        <span class="p-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 rounded-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </span>
+                    </div>
+                    <span class="text-3xl font-bold text-gray-900 dark:text-gray-100">42%</span>
+                    <span class="text-green-500 text-sm font-bold ml-2">↓ 5%</span>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">vs last month</p>
+                </div>
+            </div>
+
+            <!-- Charts & Tables -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Revenue Chart -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg">Revenue Overview</h3>
+                        <select class="text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-1">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 90 days</option>
+                        </select>
+                    </div>
+                    <div class="h-64 flex items-end justify-between gap-2 px-4 border-b border-l border-gray-200 dark:border-gray-700">
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-32 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$3.2k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Mon</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-48 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$5.1k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Tue</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-60 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$8.4k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Wed</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-40 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$4.8k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Thu</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-52 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$6.2k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Fri</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Growth Chart -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg">User Growth</h3>
+                        <div class="flex gap-2">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+                                <span class="text-xs text-gray-600 dark:text-gray-400">New Users</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                                <span class="text-xs text-gray-600 dark:text-gray-400">Returning</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-64 flex items-end justify-between gap-1 px-4 border-b border-l border-gray-200 dark:border-gray-700">
+                        <div class="flex-1 flex flex-col items-center group relative">
+                            <div class="w-full flex flex-col items-end gap-1">
+                                <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-24 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">120</span>
+                                </div>
+                                <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-16 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">80</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Mon</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group relative">
+                            <div class="w-full flex flex-col items-end gap-1">
+                                <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-32 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">160</span>
+                                </div>
+                                <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-20 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">100</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Tue</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group relative">
+                            <div class="w-full flex flex-col items-end gap-1">
+                                <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-40 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">200</span>
+                                </div>
+                                <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-24 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">120</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Wed</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group relative">
+                            <div class="w-full flex flex-col items-end gap-1">
+                                <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-36 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">180</span>
+                                </div>
+                                <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-20 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">100</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Thu</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group relative">
+                            <div class="w-full flex flex-col items-end gap-1">
+                                <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-44 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">220</span>
+                                </div>
+                                <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-28 cursor-pointer">
+                                    <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">140</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Fri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg">Recent Transactions</h3>
+                    <a href="#" class="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-semibold">View All</a>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="text-gray-500 dark:text-gray-400 text-sm border-b border-gray-200 dark:border-gray-700">
+                                <th class="pb-3 font-semibold">Customer</th>
+                                <th class="pb-3 font-semibold">Date</th>
+                                <th class="pb-3 font-semibold">Amount</th>
+                                <th class="pb-3 font-semibold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 font-medium text-gray-900 dark:text-gray-100">John Doe</td>
+                                <td class="py-3 text-gray-500 dark:text-gray-400">Oct 24, 2025</td>
+                                <td class="py-3 font-medium text-gray-900 dark:text-gray-100">$120.00</td>
+                                <td class="py-3"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Completed</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 font-medium text-gray-900 dark:text-gray-100">Jane Smith</td>
+                                <td class="py-3 text-gray-500 dark:text-gray-400">Oct 23, 2025</td>
+                                <td class="py-3 font-medium text-gray-900 dark:text-gray-100">$85.50</td>
+                                <td class="py-3"><span class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 px-2 py-1 rounded-full text-xs font-bold">Pending</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 font-medium text-gray-900 dark:text-gray-100">Robert Fox</td>
+                                <td class="py-3 text-gray-500 dark:text-gray-400">Oct 23, 2025</td>
+                                <td class="py-3 font-medium text-gray-900 dark:text-gray-100">$230.00</td>
+                                <td class="py-3"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Completed</span></td>
+                            </tr>
+                            <tr class="border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 font-medium text-gray-900 dark:text-gray-100">Emily Davis</td>
+                                <td class="py-3 text-gray-500 dark:text-gray-400">Oct 22, 2025</td>
+                                <td class="py-3 font-medium text-gray-900 dark:text-gray-100">$45.00</td>
+                                <td class="py-3"><span class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-1 rounded-full text-xs font-bold">Failed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile Sidebar Toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+
+</body>
+</html>

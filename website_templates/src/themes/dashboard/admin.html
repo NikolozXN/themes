@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Admin Panel</title>
+    <link rel="stylesheet" href="../../../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-200 flex h-screen overflow-hidden">
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 lg:hidden hidden" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-r border-gray-200 dark:border-gray-700 flex flex-col flex-shrink-0 transition-all duration-300 z-50 transform -translate-x-full lg:translate-x-0">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                </div>
+                <span class="font-black">DashBoard</span>
+            </a>
+            <button onclick="toggleSidebar()" class="lg:hidden p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <span class="font-medium">Dashboard</span>
+            </a>
+            <a href="admin.html" class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl shadow-lg shadow-indigo-500/20 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                <span class="font-semibold">Analytics</span>
+            </a>
+            <a href="services.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <span class="font-medium">Users</span>
+            </a>
+            <a href="about.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                <span class="font-medium">Profile</span>
+            </a>
+            <a href="contact.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <span class="font-medium">Messages</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+            <a href="../../index.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition text-sm font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                Exit Demo
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        
+        <!-- Topbar -->
+        <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex justify-between items-center z-10 transition-colors duration-200">
+            <div class="flex items-center gap-4">
+                <button onclick="toggleSidebar()" class="lg:hidden p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <h2 class="text-sm sm:text-base lg:text-xl font-bold text-gray-900 dark:text-gray-100"><span class="sm:hidden">Analytics</span><span class="hidden sm:inline">Analytics Dashboard</span></h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="dark-mode-toggle" class="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                    <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+                <button class="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition relative">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                </button>
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/20 cursor-pointer">JD</div>
+            </div>
+        </header>
+
+        <!-- Content Scrollable -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 dark:bg-gray-900 p-6 transition-colors duration-200">
+            
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Total Revenue</h3>
+                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">$124,580</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">↑ 12.5% vs last month</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">MRR</h3>
+                        <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">$8,450</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Monthly recurring</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Active Subscriptions</h3>
+                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">1,247</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Out of 1,580 vendors</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Total Orders</h3>
+                        <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    </div>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">8,924</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">23 pending</p>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Revenue Chart -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Revenue (Last 12 Months)</h3>
+                        <select class="text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-1">
+                            <option>12 Months</option>
+                            <option>6 Months</option>
+                            <option>3 Months</option>
+                        </select>
+                    </div>
+                    <div class="relative h-[300px] flex items-end justify-between gap-1 px-4 border-b border-l border-gray-200 dark:border-gray-700">
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-32 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$8.2k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Jan</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-40 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$9.5k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Feb</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-48 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$11.2k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Mar</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-56 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$12.8k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Apr</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-64 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$14.5k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">May</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-72 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$16.2k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Jun</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-64 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$15.8k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Jul</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-56 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$13.5k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Aug</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-60 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$14.2k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Sep</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-68 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$15.5k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Oct</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-72 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$16.8k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Nov</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 dark:from-indigo-500 dark:to-indigo-600 rounded-t-sm hover:from-indigo-700 hover:to-indigo-500 transition-all relative h-80 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">$18.2k</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Dec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders Chart -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Orders (Last 30 Days)</h3>
+                        <select class="text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-1">
+                            <option>30 Days</option>
+                            <option>7 Days</option>
+                            <option>90 Days</option>
+                        </select>
+                    </div>
+                    <div class="relative h-[300px] flex items-end justify-between gap-1 px-4 border-b border-l border-gray-200 dark:border-gray-700">
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-24 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">45</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">1</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-32 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">62</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">5</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-40 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">78</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">10</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-36 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">72</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">15</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-48 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">96</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">20</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-44 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">88</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">25</span>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center group">
+                            <div class="w-full bg-gradient-to-t from-purple-600 to-purple-400 dark:from-purple-500 dark:to-purple-600 rounded-t-sm hover:from-purple-700 hover:to-purple-500 transition-all relative h-52 cursor-pointer">
+                                <span class="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">104</span>
+                            </div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscription Status & Top Vendors -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Subscription Status -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">Subscription Status</h3>
+                    <div class="relative h-[250px] flex items-center justify-center">
+                        <div class="relative w-48 h-48">
+                            <!-- Doughnut Chart Visualization -->
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" stroke-width="8" class="dark:stroke-gray-700"></circle>
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#22c55e" stroke-width="8" stroke-dasharray="188.5 62.8" stroke-dashoffset="0"></circle>
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#f59e0b" stroke-width="8" stroke-dasharray="125.7 125.7" stroke-dashoffset="-62.8"></circle>
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" stroke-width="8" stroke-dasharray="62.8 188.5" stroke-dashoffset="-188.5"></circle>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">1,247</span>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">Total</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-6 mt-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Active (1,124)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Trial (89)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Cancelled (34)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Vendors -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 dark:text-gray-100">Top Vendors by Revenue</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold">T</div>
+                                <div>
+                                    <p class="font-medium text-gray-900 dark:text-gray-100">TechCorp Solutions</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">342 orders</p>
+                                </div>
+                            </div>
+                            <p class="font-bold text-green-600 dark:text-green-400">$24,580</p>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold">D</div>
+                                <div>
+                                    <p class="font-medium text-gray-900 dark:text-gray-100">Digital Dynamics</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">298 orders</p>
+                                </div>
+                            </div>
+                            <p class="font-bold text-green-600 dark:text-green-400">$18,920</p>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold">I</div>
+                                <div>
+                                    <p class="font-medium text-gray-900 dark:text-gray-100">Innovate Labs</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">267 orders</p>
+                                </div>
+                            </div>
+                            <p class="font-bold text-green-600 dark:text-green-400">$15,450</p>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 font-bold">C</div>
+                                <div>
+                                    <p class="font-medium text-gray-900 dark:text-gray-100">Cloud Systems</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">234 orders</p>
+                                </div>
+                            </div>
+                            <p class="font-bold text-green-600 dark:text-green-400">$12,380</p>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-600 dark:text-yellow-400 font-bold">S</div>
+                                <div>
+                                    <p class="font-medium text-gray-900 dark:text-gray-100">StartupHub</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">198 orders</p>
+                                </div>
+                            </div>
+                            <p class="font-bold text-green-600 dark:text-green-400">$9,650</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Recent Orders</h3>
+                    <a href="#" class="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-semibold">View All</a>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <th class="text-left py-3 px-4 text-sm font-medium text-gray-500 dark:text-gray-400">Order #</th>
+                                <th class="text-left py-3 px-4 text-sm font-medium text-gray-500 dark:text-gray-400">Vendor</th>
+                                <th class="text-left py-3 px-4 text-sm font-medium text-gray-500 dark:text-gray-400">Customer</th>
+                                <th class="text-left py-3 px-4 text-sm font-medium text-gray-500 dark:text-gray-400">Amount</th>
+                                <th class="text-left py-3 px-4 text-sm font-medium text-gray-500 dark:text-gray-400">Status</th>
+                                <th class="text-left py-3 px-4 text-sm font-medium text-gray-500 dark:text-gray-400">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 px-4">
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium">#ORD-2024-001</a>
+                                </td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">TechCorp Solutions</td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">John Smith</td>
+                                <td class="py-3 px-4 font-medium text-gray-900 dark:text-gray-100">$1,245.00</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400">Completed</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">Dec 15, 2024</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 px-4">
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium">#ORD-2024-002</a>
+                                </td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">Digital Dynamics</td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">Sarah Johnson</td>
+                                <td class="py-3 px-4 font-medium text-gray-900 dark:text-gray-100">$890.50</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-400">Pending</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">Dec 14, 2024</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 px-4">
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium">#ORD-2024-003</a>
+                                </td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">Innovate Labs</td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">Michael Brown</td>
+                                <td class="py-3 px-4 font-medium text-gray-900 dark:text-gray-100">$2,380.00</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400">Completed</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">Dec 14, 2024</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 px-4">
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium">#ORD-2024-004</a>
+                                </td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">Cloud Systems</td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">Emily Davis</td>
+                                <td class="py-3 px-4 font-medium text-gray-900 dark:text-gray-100">$1,650.00</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400">Completed</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">Dec 13, 2024</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 px-4">
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium">#ORD-2024-005</a>
+                                </td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">StartupHub</td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">David Wilson</td>
+                                <td class="py-3 px-4 font-medium text-gray-900 dark:text-gray-100">$745.00</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300">Cancelled</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">Dec 13, 2024</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="py-3 px-4">
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium">#ORD-2024-006</a>
+                                </td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">TechCorp Solutions</td>
+                                <td class="py-3 px-4 text-gray-900 dark:text-gray-100">Lisa Anderson</td>
+                                <td class="py-3 px-4 font-medium text-gray-900 dark:text-gray-100">$3,120.00</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-400">Pending</span>
+                                </td>
+                                <td class="py-3 px-4 text-sm text-gray-500 dark:text-gray-400">Dec 12, 2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile Sidebar Toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+
+</body>
+</html>

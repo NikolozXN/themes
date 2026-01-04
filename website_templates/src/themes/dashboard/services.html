@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Users</title>
+    <link rel="stylesheet" href="../../../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .dark-mode { display: none; }
+        .dark .dark-mode { display: block; }
+        .dark .light-mode { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-200 flex h-screen overflow-hidden">
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 lg:hidden hidden" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-r border-gray-200 dark:border-gray-700 flex flex-col flex-shrink-0 transition-all duration-300 z-50 transform -translate-x-full lg:translate-x-0">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                </div>
+                <span class="font-black">DashBoard</span>
+            </a>
+            <button onclick="toggleSidebar()" class="lg:hidden p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <span class="font-medium">Overview</span>
+            </a>
+            <a href="admin.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                <span class="font-medium">Analytics</span>
+            </a>
+            <a href="services.html" class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl shadow-lg shadow-indigo-500/20 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <span class="font-semibold">Users</span>
+            </a>
+            <a href="about.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                <span class="font-medium">Profile</span>
+            </a>
+            <a href="contact.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <span class="font-medium">Messages</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+            <a href="../../index.html" class="flex items-center gap-3 px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition text-sm font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                Exit Demo
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        
+        <!-- Topbar -->
+        <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex justify-between items-center z-10 transition-colors duration-200">
+            <div class="flex items-center gap-4">
+                <button onclick="toggleSidebar()" class="lg:hidden p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <h2 class="text-sm sm:text-base lg:text-xl font-bold text-gray-900 dark:text-gray-100"><span class="sm:hidden">Users</span><span class="hidden sm:inline">User Management</span></h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="dark-mode-toggle" class="p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition">
+                    <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+                <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/20 cursor-pointer">JD</div>
+            </div>
+        </header>
+
+        <!-- Content Scrollable -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 transition-colors duration-200">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <div class="p-4 border-b border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row gap-4">
+                    <input type="text" placeholder="Search users..." class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100">
+                    <select class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100">
+                        <option>All Roles</option>
+                        <option>Admin</option>
+                        <option>Editor</option>
+                        <option>User</option>
+                    </select>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                            <tr>
+                                <th class="px-4 sm:px-6 py-4">Name</th>
+                                <th class="px-4 sm:px-6 py-4">Role</th>
+                                <th class="px-4 sm:px-6 py-4">Status</th>
+                                <th class="px-4 sm:px-6 py-4 hidden sm:table-cell">Last Login</th>
+                                <th class="px-4 sm:px-6 py-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700 text-sm">
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Alice Freeman" class="w-8 h-8 rounded-full object-cover">
+                                    <div class="font-bold text-gray-900 dark:text-gray-100">Alice Freeman</div>
+                                </td>
+                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400">Editor</td>
+                                <td class="px-4 sm:px-6 py-4"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
+                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">2 hours ago</td>
+                                <td class="px-4 sm:px-6 py-4 text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Bob Smith" class="w-8 h-8 rounded-full object-cover">
+                                    <div class="font-bold text-gray-900 dark:text-gray-100">Bob Smith</div>
+                                </td>
+                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400">User</td>
+                                <td class="px-4 sm:px-6 py-4"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded-full text-xs font-bold">Offline</span></td>
+                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">Yesterday</td>
+                                <td class="px-4 sm:px-6 py-4 text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Charlie Day" class="w-8 h-8 rounded-full object-cover">
+                                    <div class="font-bold text-gray-900 dark:text-gray-100">Charlie Day</div>
+                                </td>
+                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400">Admin</td>
+                                <td class="px-4 sm:px-6 py-4"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
+                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">Just now</td>
+                                <td class="px-4 sm:px-6 py-4 text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                <td class="px-4 sm:px-6 py-4 flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Diana Miller" class="w-8 h-8 rounded-full object-cover">
+                                    <div class="font-bold text-gray-900 dark:text-gray-100">Diana Miller</div>
+                                </td>
+                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400">Editor</td>
+                                <td class="px-4 sm:px-6 py-4"><span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 px-2 py-1 rounded-full text-xs font-bold">Active</span></td>
+                                <td class="px-4 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">5 hours ago</td>
+                                <td class="px-4 sm:px-6 py-4 text-indigo-600 dark:text-indigo-400 font-bold cursor-pointer hover:text-indigo-800 dark:hover:text-indigo-300">Edit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                    <span>Showing 1-4 of 50 users</span>
+                    <div class="flex gap-2">
+                        <button class="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition">Prev</button>
+                        <button class="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition">Next</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile Sidebar Toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+
+</body>
+</html>
