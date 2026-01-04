@@ -15,21 +15,21 @@
         .dark .light-mode { display: none; }
     </style>
 </head>
-<body class="bg-gray-950 dark:bg-gray-950 text-white dark:text-white antialiased transition-colors duration-200">
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased transition-colors duration-200">
     
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-gray-950/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-800 dark:border-gray-800">
+    <nav class="fixed w-full z-50 top-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
                 <a href="index.html" class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">
                     <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">CREATIVE</span>
-                    <span class="text-white dark:text-white">.</span>
+                    <span class="text-gray-900 dark:text-white">.</span>
                 </a>
                 <div class="hidden md:flex items-center gap-4 lg:gap-6">
-                    <a href="index.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition font-medium">Home</a>
-                    <a href="about.html" class="text-white dark:text-white font-semibold border-b-2 border-pink-500 dark:border-pink-500 pb-1">About</a>
-                    <a href="services.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition font-medium">Services</a>
-                    <button id="dark-mode-toggle" class="p-2 text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white hover:bg-gray-800 dark:hover:bg-gray-800 rounded-lg transition">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition font-medium">Home</a>
+                    <a href="about.html" class="text-gray-900 dark:text-white font-semibold border-b-2 border-pink-500 dark:border-pink-500 pb-1">About</a>
+                    <a href="services.html" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition font-medium">Services</a>
+                    <button id="dark-mode-toggle" class="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
                         <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                         <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </button>
@@ -38,11 +38,11 @@
                     </a>
                 </div>
                 <div class="md:hidden flex items-center gap-2">
-                    <button id="dark-mode-toggle" class="p-2 text-white dark:text-white hover:bg-gray-800 dark:hover:bg-gray-800 rounded-lg transition">
+                    <button id="dark-mode-toggle" class="p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
                         <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                         <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </button>
-                    <button id="mobile-menu-btn" class="p-2 text-white dark:text-white">
+                    <button id="mobile-menu-btn" class="p-2 text-gray-900 dark:text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -51,11 +51,11 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-950 dark:bg-gray-950 border-t border-gray-800 dark:border-gray-800 pb-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 pb-4">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
-                <a href="index.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition py-2">Home</a>
-                <a href="about.html" class="text-white dark:text-white font-semibold py-2">About</a>
-                <a href="services.html" class="text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-white transition py-2">Services</a>
+                <a href="index.html" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition py-2">Home</a>
+                <a href="about.html" class="text-gray-900 dark:text-white font-semibold py-2">About</a>
+                <a href="services.html" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition py-2">Services</a>
                 <a href="contact.html" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 dark:from-pink-500 dark:to-purple-600 rounded-full font-semibold text-center">Contact</a>
             </div>
         </div>
@@ -67,7 +67,7 @@
         });
 
         // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeToggles = document.querySelectorAll('#dark-mode-toggle');
         const html = document.documentElement;
         
         // Check for saved theme preference or default to dark mode (agency theme is dark by default)
@@ -76,27 +76,29 @@
             html.classList.add('dark');
         }
         
-        darkModeToggle?.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const theme = html.classList.contains('dark') ? 'dark' : 'light';
-            localStorage.setItem('agency-theme', theme);
+        darkModeToggles.forEach(toggle => {
+            toggle?.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                const theme = html.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('agency-theme', theme);
+            });
         });
     </script>
 
     <!-- Hero Section -->
-    <section class="relative pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black"></div>
+    <section class="relative pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black"></div>
         <div class="absolute inset-0">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-500/10 dark:bg-pink-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 leading-tight">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 leading-tight text-gray-900 dark:text-white">
                     We are a team of<br>
                     <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">creators</span>.
                 </h1>
-                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed font-medium max-w-3xl mx-auto px-4">
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed font-medium max-w-3xl mx-auto px-4">
                     Founded in 2018, Creative Agency has grown from a small design studio to a full-service digital powerhouse. We believe in the power of design to transform businesses.
                 </p>
             </div>
@@ -104,24 +106,24 @@
     </section>
 
     <!-- Story Section -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-900">
+    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center mb-12 sm:mb-16 md:mb-20">
                 <div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight text-gray-900 dark:text-white">
                         Our Story
                     </h2>
-                    <p class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-4 font-medium">
+                    <p class="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 font-medium">
                         What started as a passion project between two designers has evolved into a team of 50+ creative professionals. We've worked with startups, Fortune 500 companies, and everything in between.
                     </p>
-                    <p class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-4 font-medium">
+                    <p class="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 font-medium">
                         Our mission is simple: create exceptional digital experiences that drive results. We combine strategic thinking with creative excellence to deliver solutions that not only look great but perform even better.
                     </p>
-                    <p class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-medium">
+                    <p class="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
                         Today, we're proud to have helped over 200 companies transform their digital presence and achieve their business goals.
                     </p>
                 </div>
-                <div class="aspect-[4/5] bg-gray-800 rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-700">
+                <div class="aspect-[4/5] bg-gray-200 dark:bg-gray-800 rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-300 dark:border-gray-700">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Team" class="w-full h-full object-cover" loading="lazy">
                 </div>
             </div>
@@ -129,45 +131,45 @@
     </section>
 
     <!-- Values Section -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-950">
+    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16 md:mb-20">
-                <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">Our Values</span>
-                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight">
+                <span class="inline-block px-4 py-2 bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-400 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">Our Values</span>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight text-gray-900 dark:text-white">
                     What Drives Us
                 </h2>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-700">
+                <div class="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
                         <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Innovation</h3>
-                    <p class="text-sm sm:text-base text-gray-400 leading-relaxed font-medium">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">Innovation</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
                         We stay ahead of trends and constantly explore new technologies to deliver cutting-edge solutions.
                     </p>
                 </div>
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-700">
+                <div class="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
                         <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Excellence</h3>
-                    <p class="text-sm sm:text-base text-gray-400 leading-relaxed font-medium">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">Excellence</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
                         We never settle for good enough. Every project is an opportunity to exceed expectations and set new standards.
                     </p>
                 </div>
-                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-700">
+                <div class="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
                         <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Collaboration</h3>
-                    <p class="text-sm sm:text-base text-gray-400 leading-relaxed font-medium">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">Collaboration</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
                         We believe the best results come from working closely with our clients as partners, not just vendors.
                     </p>
                 </div>
@@ -176,24 +178,24 @@
     </section>
 
     <!-- Team Stats -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-900">
+    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <div class="text-center">
                     <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-2 sm:mb-4 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">50+</div>
-                    <div class="text-sm sm:text-base text-gray-400 font-medium uppercase tracking-wider">Team Members</div>
+                    <div class="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium uppercase tracking-wider">Team Members</div>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-2 sm:mb-4 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">200+</div>
-                    <div class="text-sm sm:text-base text-gray-400 font-medium uppercase tracking-wider">Happy Clients</div>
+                    <div class="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium uppercase tracking-wider">Happy Clients</div>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-2 sm:mb-4 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">500+</div>
-                    <div class="text-sm sm:text-base text-gray-400 font-medium uppercase tracking-wider">Projects</div>
+                    <div class="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium uppercase tracking-wider">Projects</div>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-2 sm:mb-4 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">15+</div>
-                    <div class="text-sm sm:text-base text-gray-400 font-medium uppercase tracking-wider">Awards</div>
+                    <div class="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium uppercase tracking-wider">Awards</div>
                 </div>
             </div>
         </div>
@@ -218,7 +220,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-gray-400 py-12 sm:py-16 border-t border-gray-800">
+    <footer class="bg-gray-900 dark:bg-black text-gray-400 dark:text-gray-500 py-12 sm:py-16 border-t border-gray-800 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
                 <div class="sm:col-span-2 lg:col-span-1">

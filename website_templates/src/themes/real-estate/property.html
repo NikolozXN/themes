@@ -14,10 +14,10 @@
         .dark .light-mode { display: none; }
     </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
+<body class="bg-white dark:bg-gray-900 dark:bg-gray-900 text-gray-900 dark:text-white dark:text-gray-100 antialiased transition-colors duration-200">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 shadow-sm">
+    <nav class="fixed w-full z-50 top-0 bg-white dark:bg-gray-900/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-700 dark:border-gray-800 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
                 <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
@@ -26,15 +26,15 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                         </svg>
                     </div>
-                    <span class="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 dark:text-white" style="font-family: 'Manrope', sans-serif;">DreamHome</span>
+                    <span class="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 dark:text-white dark:text-white" style="font-family: 'Manrope', sans-serif;">DreamHome</span>
                 </a>
                 <div class="hidden md:flex items-center gap-4 lg:gap-6">
-                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Buy</a>
-                    <a href="services.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Rent</a>
-                    <a href="services.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Sell</a>
-                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Agents</a>
-                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Contact</a>
-                    <button id="dark-mode-toggle" class="p-2 text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Buy</a>
+                    <a href="services.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Rent</a>
+                    <a href="services.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Sell</a>
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Agents</a>
+                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition font-semibold">Contact</a>
+                    <button id="dark-mode-toggle" class="p-2 text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-800 rounded-lg transition">
                         <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                         <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </button>
@@ -43,11 +43,11 @@
                     </a>
                 </div>
                 <div class="md:hidden flex items-center gap-2">
-                    <button id="dark-mode-toggle" class="p-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
+                    <button id="dark-mode-toggle" class="p-2 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-800 rounded-lg transition">
                         <svg class="w-5 h-5 light-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                         <svg class="w-5 h-5 dark-mode" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </button>
-                    <button id="mobile-menu-btn" class="p-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400">
+                    <button id="mobile-menu-btn" class="p-2 text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -56,13 +56,13 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pb-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 dark:border-gray-800 pb-4">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
-                <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Buy</a>
-                <a href="services.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Rent</a>
-                <a href="services.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Sell</a>
-                <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Agents</a>
-                <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Contact</a>
+                <a href="index.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Buy</a>
+                <a href="services.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Rent</a>
+                <a href="services.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Sell</a>
+                <a href="about.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Agents</a>
+                <a href="contact.html" class="text-gray-600 dark:text-gray-300 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-2">Contact</a>
                 <a href="contact.html" class="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-500 dark:to-teal-500 text-white rounded-xl font-bold text-center">List Property</a>
             </div>
         </div>
@@ -96,20 +96,20 @@
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
                 <!-- Property Images -->
                 <div>
-                    <div class="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-xl">
+                    <div class="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-700 mb-4 shadow-xl">
                         <img id="main-image" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=900&fit=crop" alt="Property" class="w-full h-full object-cover" loading="eager">
                     </div>
                     <div class="grid grid-cols-4 gap-3 sm:gap-4">
-                        <button class="thumbnail aspect-square rounded-xl overflow-hidden border-2 border-gray-200 hover:border-emerald-600 transition">
+                        <button class="thumbnail aspect-square rounded-xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-emerald-600 transition">
                             <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=400&fit=crop" alt="Thumbnail" class="w-full h-full object-cover">
                         </button>
-                        <button class="thumbnail aspect-square rounded-xl overflow-hidden border-2 border-gray-200 hover:border-emerald-600 transition">
+                        <button class="thumbnail aspect-square rounded-xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-emerald-600 transition">
                             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop" alt="Thumbnail" class="w-full h-full object-cover">
                         </button>
-                        <button class="thumbnail aspect-square rounded-xl overflow-hidden border-2 border-gray-200 hover:border-emerald-600 transition">
+                        <button class="thumbnail aspect-square rounded-xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-emerald-600 transition">
                             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop" alt="Thumbnail" class="w-full h-full object-cover">
                         </button>
-                        <button class="thumbnail aspect-square rounded-xl overflow-hidden border-2 border-gray-200 hover:border-emerald-600 transition">
+                        <button class="thumbnail aspect-square rounded-xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-emerald-600 transition">
                             <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=400&fit=crop" alt="Thumbnail" class="w-full h-full object-cover">
                         </button>
                     </div>
@@ -121,29 +121,29 @@
                         <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
                         For Sale
                     </div>
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-gray-900" style="font-family: 'Manrope', sans-serif;">Modern Villa</h1>
-                    <p class="text-lg sm:text-xl text-gray-600 mb-6 font-medium">123 Luxury Lane, Beverly Hills, CA 90210</p>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-gray-900 dark:text-white" style="font-family: 'Manrope', sans-serif;">Modern Villa</h1>
+                    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6 font-medium">123 Luxury Lane, Beverly Hills, CA 90210</p>
                     
                     <div class="mb-8">
                         <div class="flex items-baseline gap-4 mb-2">
                             <span class="text-4xl sm:text-5xl font-black text-emerald-600" style="font-family: 'Manrope', sans-serif;">$850,000</span>
                         </div>
-                        <p class="text-gray-600 font-medium">$340 per sqft • Listed 2 days ago</p>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium">$340 per sqft • Listed 2 days ago</p>
                     </div>
 
                     <!-- Property Stats -->
-                    <div class="grid grid-cols-3 gap-4 sm:gap-6 mb-8 p-4 sm:p-6 bg-gray-50 rounded-2xl">
+                    <div class="grid grid-cols-3 gap-4 sm:gap-6 mb-8 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl">
                         <div class="text-center">
-                            <div class="text-2xl sm:text-3xl font-black text-gray-900 mb-1" style="font-family: 'Manrope', sans-serif;">4</div>
-                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wider">Bedrooms</div>
+                            <div class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mb-1" style="font-family: 'Manrope', sans-serif;">4</div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-semibold uppercase tracking-wider">Bedrooms</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-2xl sm:text-3xl font-black text-gray-900 mb-1" style="font-family: 'Manrope', sans-serif;">3</div>
-                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wider">Bathrooms</div>
+                            <div class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mb-1" style="font-family: 'Manrope', sans-serif;">3</div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-semibold uppercase tracking-wider">Bathrooms</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-2xl sm:text-3xl font-black text-gray-900 mb-1" style="font-family: 'Manrope', sans-serif;">2,500</div>
-                            <div class="text-xs sm:text-sm text-gray-600 font-semibold uppercase tracking-wider">Sqft</div>
+                            <div class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mb-1" style="font-family: 'Manrope', sans-serif;">2,500</div>
+                            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-semibold uppercase tracking-wider">Sqft</div>
                         </div>
                     </div>
 
@@ -151,37 +151,37 @@
                     <div class="mb-8">
                         <h3 class="text-lg sm:text-xl font-black mb-4" style="font-family: 'Manrope', sans-serif;">Key Features</h3>
                         <div class="grid sm:grid-cols-2 gap-3">
-                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 font-medium">
+                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
                                 <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span>Garage (2 cars)</span>
                             </div>
-                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 font-medium">
+                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
                                 <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span>Swimming Pool</span>
                             </div>
-                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 font-medium">
+                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
                                 <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span>Modern Kitchen</span>
                             </div>
-                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 font-medium">
+                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
                                 <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span>Hardwood Floors</span>
                             </div>
-                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 font-medium">
+                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
                                 <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span>Central AC</span>
                             </div>
-                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 font-medium">
+                            <div class="flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
                                 <svg class="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
@@ -195,12 +195,12 @@
                         <a href="contact.html" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg hover:shadow-xl hover:shadow-emerald-500/30 transition hover:scale-[1.02] text-center">
                             Contact Agent
                         </a>
-                        <button class="px-6 py-4 sm:py-5 border-2 border-gray-200 rounded-xl hover:border-emerald-600 transition">
+                        <button class="px-6 py-4 sm:py-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-emerald-600 transition">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                             </svg>
                         </button>
-                        <button class="px-6 py-4 sm:py-5 border-2 border-gray-200 rounded-xl hover:border-emerald-600 transition">
+                        <button class="px-6 py-4 sm:py-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-emerald-600 transition">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342c-.396 0-.396-.396 0-.396a5.008 5.008 0 013.316-1.316c1.98 0 3.316 1.316 3.316 3.316 0 1.98-1.316 3.316-3.316 3.316a5.008 5.008 0 01-3.316-1.316c-.396-.396-.396-.396 0-.396h8.052"></path>
                             </svg>
@@ -208,15 +208,15 @@
                     </div>
 
                     <!-- Property Description -->
-                    <div class="border-t border-gray-200 pt-8">
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-8">
                         <h3 class="text-xl sm:text-2xl font-black mb-4" style="font-family: 'Manrope', sans-serif;">Property Description</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4 font-medium">
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 font-medium">
                             This stunning modern villa offers the perfect blend of luxury and comfort. Located in the prestigious Beverly Hills neighborhood, this property features contemporary design with high-end finishes throughout.
                         </p>
-                        <p class="text-gray-700 leading-relaxed mb-4 font-medium">
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 font-medium">
                             The open-concept living space flows seamlessly from the gourmet kitchen to the spacious family room, perfect for entertaining. The master suite includes a walk-in closet and spa-like bathroom. The backyard features a resort-style pool and outdoor kitchen area.
                         </p>
-                        <p class="text-gray-700 leading-relaxed font-medium">
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
                             This property is move-in ready and offers the perfect opportunity to own a piece of luxury real estate in one of California's most desirable locations.
                         </p>
                     </div>
@@ -226,12 +226,12 @@
     </section>
 
     <!-- Related Properties -->
-    <section class="py-12 sm:py-16 md:py-20 bg-gray-50">
+    <section class="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-8 sm:mb-12 text-gray-900" style="font-family: 'Manrope', sans-serif;">Similar Properties</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-8 sm:mb-12 text-gray-900 dark:text-white" style="font-family: 'Manrope', sans-serif;">Similar Properties</h2>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Property 1 -->
-                <a href="property.html" class="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-200 hover:border-emerald-500">
+                <a href="property.html" class="group bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700 hover:border-emerald-500">
                     <div class="relative h-64 sm:h-72 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Property" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
                         <div class="absolute top-4 left-4">
@@ -240,11 +240,11 @@
                     </div>
                     <div class="p-5 sm:p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-emerald-600 transition" style="font-family: 'Manrope', sans-serif;">Downtown Loft</h3>
+                            <h3 class="text-xl sm:text-2xl font-black text-gray-900 dark:text-white group-hover:text-emerald-600 transition" style="font-family: 'Manrope', sans-serif;">Downtown Loft</h3>
                             <span class="text-xl font-black text-emerald-600" style="font-family: 'Manrope', sans-serif;">$625K</span>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4 font-medium">789 Suburban Drive, Austin, TX</p>
-                        <div class="flex flex-wrap items-center gap-4 text-xs text-gray-600 font-semibold">
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">789 Suburban Drive, Austin, TX</p>
+                        <div class="flex flex-wrap items-center gap-4 text-xs text-gray-600 dark:text-gray-300 font-semibold">
                             <span>5 Beds</span>
                             <span>•</span>
                             <span>4 Baths</span>
@@ -255,7 +255,7 @@
                 </a>
 
                 <!-- Property 2 -->
-                <a href="property.html" class="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-200 hover:border-emerald-500">
+                <a href="property.html" class="group bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700 hover:border-emerald-500">
                     <div class="relative h-64 sm:h-72 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Property" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
                         <div class="absolute top-4 left-4">
@@ -264,11 +264,11 @@
                     </div>
                     <div class="p-5 sm:p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-emerald-600 transition" style="font-family: 'Manrope', sans-serif;">Family Home</h3>
+                            <h3 class="text-xl sm:text-2xl font-black text-gray-900 dark:text-white group-hover:text-emerald-600 transition" style="font-family: 'Manrope', sans-serif;">Family Home</h3>
                             <span class="text-xl font-black text-emerald-600" style="font-family: 'Manrope', sans-serif;">$3,200/mo</span>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4 font-medium">456 Urban Street, Manhattan, NY</p>
-                        <div class="flex flex-wrap items-center gap-4 text-xs text-gray-600 font-semibold">
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">456 Urban Street, Manhattan, NY</p>
+                        <div class="flex flex-wrap items-center gap-4 text-xs text-gray-600 dark:text-gray-300 font-semibold">
                             <span>2 Beds</span>
                             <span>•</span>
                             <span>2 Baths</span>
@@ -279,7 +279,7 @@
                 </a>
 
                 <!-- Property 3 -->
-                <a href="property.html" class="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-200 hover:border-emerald-500">
+                <a href="property.html" class="group bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-200 dark:border-gray-700 hover:border-emerald-500">
                     <div class="relative h-64 sm:h-72 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Property" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy">
                         <div class="absolute top-4 left-4">
@@ -288,11 +288,11 @@
                     </div>
                     <div class="p-5 sm:p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl sm:text-2xl font-black text-gray-900 group-hover:text-emerald-600 transition" style="font-family: 'Manrope', sans-serif;">Luxury Condo</h3>
+                            <h3 class="text-xl sm:text-2xl font-black text-gray-900 dark:text-white group-hover:text-emerald-600 transition" style="font-family: 'Manrope', sans-serif;">Luxury Condo</h3>
                             <span class="text-xl font-black text-emerald-600" style="font-family: 'Manrope', sans-serif;">$1.2M</span>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4 font-medium">321 Ocean View, Miami, FL</p>
-                        <div class="flex flex-wrap items-center gap-4 text-xs text-gray-600 font-semibold">
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 font-medium">321 Ocean View, Miami, FL</p>
+                        <div class="flex flex-wrap items-center gap-4 text-xs text-gray-600 dark:text-gray-300 font-semibold">
                             <span>3 Beds</span>
                             <span>•</span>
                             <span>2 Baths</span>
