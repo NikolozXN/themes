@@ -41,7 +41,7 @@
     </header>
     <script>
         // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeToggles = document.querySelectorAll('#dark-mode-toggle');
         const html = document.documentElement;
         
         // Check for saved theme preference or default to light mode
@@ -50,10 +50,13 @@
             html.classList.add('dark');
         }
         
-        darkModeToggle?.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const theme = html.classList.contains('dark') ? 'dark' : 'light';
-            localStorage.setItem('blog-theme', theme);
+        // Attach event listener to all dark mode toggle buttons (desktop and mobile)
+        darkModeToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                const theme = html.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('blog-theme', theme);
+            });
         });
     </script>
 
