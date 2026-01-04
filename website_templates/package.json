@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Tailwind CSS Theme Portal",
   "scripts": {
-    "build": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css",
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/dist/css/style.css && tailwindcss -i ./src/css/input.css -o ./dist/css/style.css",
     "watch": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --watch"
   },
   "devDependencies": {
